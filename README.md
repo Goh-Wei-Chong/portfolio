@@ -6,7 +6,7 @@ The site includes:
 
 - A home page with an introduction, selected projects, experience, education, skills, and contact links.
 - Project details that open without leaving the page.
-- A photography page with twenty supplied photographs, category filters, and an image lightbox.
+- A photography page with twenty-five supplied photographs, category filters, and an image lightbox.
 - A supplied profile portrait and designed placeholders for project images.
 - One central content file, responsive layouts, and a GitHub Pages deployment workflow.
 
@@ -103,4 +103,4 @@ If you rename the repository, update the workflow's base path to match. If you u
 - **Professional profile:** [Goh Wei Chong on LinkedIn](https://www.linkedin.com/in/goh-wei-chong-9595ba1a7/). The site links to this profile. The profile headline, Singapore location, availability, and focus on data analytics, Python, SQL, visualisation, and machine learning were reviewed during creation.
 - **Visual reference:** [Anri's Framer portfolio](https://anri.framer.website/#footer), used for visual direction, rather than for personal content or assets.
 
-The three project source links were verified against their GitHub READMEs. The photography gallery uses twenty user-supplied images, grouped into Street, Portraits, Interiors, and Details. Their locations and years remain blank until confirmed. The public files are auto-oriented, metadata-stripped WebP exports; the original photographs remain in Downloads outside this project. Unprovided live-demo links remain editable.
+The three project source links were verified against their GitHub READMEs. The photography gallery uses twenty-five user-supplied images in portrait orientation, grouped into Street, Portraits, Interiors, and Details. Their locations and years remain blank until confirmed. The public files are auto-oriented, metadata-stripped WebP exports; the original photographs remain in Downloads outside this project. Unprovided live-demo links remain editable.
