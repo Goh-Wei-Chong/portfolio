@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="390" viewBox="0 0 1000 390" fill="none">
+  <!-- Original architectural doodle. The foreground at 560–680 / 205–305 is reserved for a companion. -->
+  <g stroke="#eee9d8" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">
+    <!-- A low platform, with a slightly uneven perspective. -->
+    <path d="M119 306 832 301 918 337 183 357 82 326 119 306Z"/>
+    <path d="m82 326 101 25 735-20M183 351v6m-64-51 64 45m649-50 86 30"/>
+    <path d="m235 305 43 43m173-45 22 40m283-41 52 32" stroke-width="1.05" opacity=".65"/>
+    <path d="m204 360 186-5m34-1 45-1m358-14 62-2" stroke-width="1" opacity=".55"/>
+
+    <!-- A tall, lightly bowed street lamp. -->
+    <path d="M126 296c-1-66 3-150 2-217 0-21 16-35 36-29 8 2 13 8 17 15"/>
+    <path d="M132 292c-1-70 2-142 1-211 0-15 10-26 23-25" stroke-width="1" opacity=".65"/>
+    <path d="m172 65 17 5-3 8-18-5 4-8ZM168 73c4 5 11 7 18 5M116 296l21-1 6 7-35 1 8-7Z"/>
+    <path d="m172 90-5 7m17-9 2 9m-27-13-8 4" stroke-width="1" opacity=".7"/>
+
+    <!-- The canopy has a shallow folded roof and a hand-drawn fascia. -->
+    <path d="m211 91 451-9 71 31-538 11 16-33Z"/>
+    <path d="m195 124 2 12 537-10-1-13M211 91l16 11 450-8m-450 8-16 18M662 82l15 12 40 17"/>
+    <path d="m206 128 513-10" stroke-width="1" opacity=".55"/>
+    <path d="m255 96 17 22m113-25 14 22m114-24 11 22m108-24 11 22" stroke-width="1" opacity=".55"/>
+
+    <!-- Slender shelter posts, a back rail, and a small route board. -->
+    <path d="m226 135-2 153 9 2 1-155m469-9-1 165 9 1 1-165"/>
+    <path d="m261 135 2 144 9-1-1-143m410-7 2 151 8 1-1-152"/>
+    <path d="m273 148 408-7m-407 41 192-3m124-2 91-2m-407 93 238 1m-238 11 264 1m170 2 26 1" stroke-width="1.1" opacity=".72"/>
+    <path d="m385 147 1 56m130-58v12m1 48v75" stroke-width="1.1" opacity=".72"/>
+    <path d="m283 158 35-1 1 39-36 1-1-39Zm7 7 22-1m-21 9 17-1m-17 9 20-1m-20 8h12" stroke-width="1.1"/>
+    <path d="m219 290 18 1m459 2 20 1m-457-14 17-1" stroke-width="1"/>
+
+    <!-- A little suspended destination sign. -->
+    <path d="m483 132 1 27m87-29 1 27"/>
+    <path d="m471 161 113-3 1 42-113 3-1-42Z"/>
+    <path d="m477 167 100-2m-99 31 99-2" stroke-width=".9" opacity=".55"/>
+    <circle cx="484" cy="165" r="1.4" fill="#eee9d8" stroke="none"/>
+    <circle cx="572" cy="163" r="1.4" fill="#eee9d8" stroke="none"/>
+
+    <!-- A quiet bench, with the front feet set a little further forward. -->
+    <path d="m285 209 153-3 2 29-155 3v-29Zm1 10 152-3m-151 12 152-3"/>
+    <path d="m277 239 167-3 16 12-171 5-12-14Zm7 5 165-3m-160 12 1 29m8-29-1 29m138-33-1 29m8-29 1 27"/>
+    <path d="m282 282 20-1m126-2 20-1M288 237l-1-29m147 27-1-29m-156 31-1 12m168-16 1 13"/>
+    <path d="m296 258 130-3" stroke-width="1" opacity=".6"/>
+
+    <!-- A bus-stop flag: deliberately generic, with no real route number. -->
+    <path d="m171 166 28 1 1 47-28-1-1-47Zm14 48 1 80m-8 1 17-1"/>
+    <path d="m177 176 16 1 1 23-16-1-1-23Zm1 5 15 1m-10 10 5 1" stroke-width="1.1"/>
+    <path d="m180 200 1 4m10-3v4"/>
+    <circle cx="182" cy="195" r="1" fill="#eee9d8" stroke="none"/>
+    <circle cx="190" cy="195" r="1" fill="#eee9d8" stroke="none"/>
+
+    <!-- A small photo vending machine, out at the edge of the stop. -->
+    <path d="m779 153 64-3 11 9 4 135-74 2-5-143Z"/>
+    <path d="m843 150 4 139 11 5m-74 2 1-7 62-1M790 164l42-2 1 57-42 1-1-56Z"/>
+    <path d="m794 178 34-1m-33 18 34-1m-33 19 33-1m-23-34 1 35m11-36 1 35" stroke-width="1" opacity=".75"/>
+    <path d="m798 183 5-1v9l-5 1v-9Zm12-1 5-1v9l-5 1v-9Zm11 0h5l1 8-5 1-1-9m-22 18h5v9h-5v-9m12-1h5v9h-5v-9m11-1h5v9h-5v-9" stroke-width=".9"/>
+    <path d="m795 230 16-1 1 12-17 1v-12Zm3-3 8-1 1 3m13 3 12-1m-12 5 8-1M797 258l33-1 1 14-33 1-1-14Z" stroke-width="1.2"/>
+    <circle cx="803" cy="236" r="3"/>
+    <path d="m802 278 23-1m-32 20v5m48-6v5" stroke-width="1.05"/>
+
+    <!-- A potted shrub: a few individual leaves rather than a solid silhouette. -->
+    <path d="m867 277 27-1-4 28-18 1-5-28Zm2 5 23-1m-17 24 13-1"/>
+    <path d="m881 276-1-41m1 29 14-21m-15 12-15-16m16 3 9-22m-9 13-8-22m8 50 24-9" stroke-width="1.3"/>
+    <path d="M880 239c-11-7-12-16-8-24 9 4 12 12 8 24Zm3 7c1-14 8-20 17-21-1 11-6 18-17 21Zm-5 8c-12-1-19-8-20-17 11 1 18 7 20 17Zm6 9c9-11 18-13 28-10-6 10-14 13-28 10ZM881 232c-2-13 3-20 11-25 5 11 1 18-11 25Z" stroke-width="1.25"/>
+
+    <!-- Small, sparse marks keep the foreground airy. -->
+    <path d="m102 321 11 3m123 10 8 2m276-19 8 1m329 7 13 1m-669 8 5-2m580-27 9 1" stroke-width="1" opacity=".65"/>
+  </g>
+
+  <text x="528" y="186" fill="#eee9d8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" letter-spacing="1.6" text-anchor="middle" transform="rotate(-1.4 528 186)">LAST STOP</text>
+
+  <g stroke="#df9e7d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m226 98 47-1m7 0 13-1m486 57 64-3m-371 48 22-1"/>
+    <path d="m806 251 18-1m-651-40 26 1" stroke-width="1.3"/>
+    <path d="m870 280 20-1" stroke-width="2.2"/>
+    <circle cx="830" cy="235" r="2.3" fill="#df9e7d" stroke="none"/>
+  </g>
+</svg>
