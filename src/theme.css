@@ -81,24 +81,6 @@
 :root[data-theme="dark"] .lightbox-controls button { border-color: #849573; }
 :root[data-theme="dark"] .lightbox-placeholder p { color: var(--muted); }
 
-:root[data-theme="dark"] .site-footer { background: #11170f; color: var(--ink); }
-:root[data-theme="dark"] .eyebrow.light { color: #ccd3be; }
-:root[data-theme="dark"] .footer-aside,
-:root[data-theme="dark"] .copy-email,
-:root[data-theme="dark"] .copyright { color: var(--muted); }
-:root[data-theme="dark"] .contact-heading h2 > span { color: #b7c4a2; }
-:root[data-theme="dark"] .contact-round,
-:root[data-theme="dark"] .email-link { border-color: #849573; }
-:root[data-theme="dark"] .contact-round:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--paper);
-}
-:root[data-theme="dark"] .copy-status { color: #dce5ca; }
-:root[data-theme="dark"] .footer-bottom { border-color: var(--line); }
-:root[data-theme="dark"] .site-footer a:focus-visible,
-:root[data-theme="dark"] .site-footer button:focus-visible { outline-color: var(--accent); }
-
 @media (max-width: 1100px) {
   .header-tools { gap: 12px; }
 }

@@ -1,6 +1,8 @@
 import './styles.css';
 import './theme.css';
 import { themeToggleMarkup, initTheme } from './theme.js';
+import './footer.css';
+import { footerMarkup, initFooter } from './footer.js';
 import { profile, projects, experience, education, skills, photos } from './content.js';
 
 const base = import.meta.env.BASE_URL;
@@ -13,7 +15,7 @@ const photoPage = asset('photography/');
 const external = (url, text, className = '') => `<a class="${className}" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${text}<span class="sr-only"> (opens in a new tab)</span>${arrow}</a>`;
 
 function header() {
-  return `<header class="site-header wrap">
+  return `<header id="top" class="site-header wrap">
     <a class="brand" href="${home()}" aria-label="Goh Wei Chong, home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>GWC<span class="brand-period">.</span></span></a>
     <nav aria-label="Main navigation"><a href="${home('#about')}">About</a><a href="${home('#work')}">Work</a><a href="${photoPage}" ${isPhotography ? 'aria-current="page"' : ''}>Photography</a><a href="${home('#contact')}">Let’s talk <span aria-hidden="true">↗</span></a></nav>
     <div class="header-tools">${themeToggleMarkup()}<div class="local-time"><span class="status-dot"></span> ${esc(profile.location)} <time id="sg-time"></time></div></div>
@@ -21,15 +23,10 @@ function header() {
 }
 
 function portrait() {
-  return `<div class="hero-portrait">${portraitArrow()}<div class="portrait-frame">${profile.portrait.src
+  return `<div class="hero-portrait"><div class="portrait-frame">${profile.portrait.src
     ? `<img src="${asset(profile.portrait.src)}" alt="${esc(profile.portrait.alt)}" width="960" height="1280" fetchpriority="high" decoding="async" />`
     : `<div class="portrait-placeholder" role="img" aria-label="A space for Wei Chong’s portrait"><span class="corner corner-tl"></span><span class="corner corner-br"></span><div class="portrait-monogram">w<span>c.</span></div><span class="placeholder-caption">YOUR PORTRAIT HERE <span>↗</span></span></div>`}
     <span class="portrait-note"><span class="status-dot"></span>${esc(profile.availability)}</span></div></div>`;
-}
-
-// An original, decorative line drawing. Its tip sits just outside the portrait.
-function portraitArrow() {
-  return `<svg class="portrait-arrow" viewBox="0 0 180 160" fill="none" aria-hidden="true" focusable="false"><path d="M18 14C69 8 132 38 112 85C98 118 45 119 44 90C43 61 100 51 129 78C147 95 146 116 171 129M155 114L171 129L150 134" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 }
 
 function projectArtwork(project, index) {
@@ -62,7 +59,7 @@ function photoFrame(photo, index, preview = false) {
 }
 
 function footer() {
-  return `<footer id="contact" class="site-footer"><div class="wrap"><div class="footer-top"><span class="eyebrow light">04 / SAY HELLO</span><span class="footer-aside">A conversation is a good place to start.</span></div><div class="contact-heading"><h2>Let’s make<br><span>something matter.</span></h2><a class="contact-round" href="mailto:${esc(profile.email)}" aria-label="Email Wei Chong">${arrow}</a></div><div class="contact-line"><a class="email-link" href="mailto:${esc(profile.email)}">${esc(profile.email)}</a><button class="copy-email" aria-label="Copy email address">Copy email <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1" stroke="currentColor"/><path d="M12 4V3H3v9h1" stroke="currentColor"/></svg></button><span class="copy-status" role="status"></span></div><div class="footer-bottom"><a class="footer-signature" href="${home()}">${esc(profile.name)}<span>✳</span></a><div class="footer-socials">${external(profile.github, 'GitHub')}${external(profile.linkedin, 'LinkedIn')}<a href="${photoPage}">Photography ${arrow}</a></div><span class="copyright">© ${new Date().getFullYear()} · Made with curiosity.</span></div></div></footer>`;
+  return footerMarkup({ profile, homeUrl: home(), aboutUrl: home('#about'), photoUrl: photoPage, assetUrl: asset });
 }
 
 function portfolio() {
@@ -81,6 +78,7 @@ function photography() {
 
 document.querySelector('#app').innerHTML = isPhotography ? photography() : portfolio();
 initTheme();
+initFooter();
 
 function updateClock() {
   const clock = document.querySelector('#sg-time');
