@@ -9,7 +9,7 @@ The site includes:
 - A photography page with twenty-five supplied photographs, category filters, and an image lightbox.
 - A supplied profile portrait and designed placeholders for project images.
 - Light and dark themes on both pages, with a header toggle and a saved preference.
-- An illustrated “last stop” contact footer with an interactive Shisa mascot.
+- An illustrated “last stop” contact footer with official Shisa artwork and sourced Japanese dialogue with English translations.
 - One central content file, responsive layouts, and a GitHub Pages deployment workflow.
 
 ## Run locally
@@ -79,7 +79,7 @@ portfolio/
 ├── docs/
 │   ├── EDITING.md
 │   ├── ARCHITECTURE.md
-│   └── ASSETS.md                 # Footer artwork provenance and generation prompt
+│   └── ASSETS.md                 # Footer artwork credits and dialogue sources
 └── vite.config.js                # Build entry points and deployment base path
 ```
 
@@ -111,6 +111,6 @@ If you rename the repository, update the workflow's base path to match. If you u
 - **Resume:** the user-supplied `Goh Wei Chong Resume (2).pdf`. This is the source for the factual resume content used in the site. The private original is not copied into the repository.
 - **Professional profile:** [Goh Wei Chong on LinkedIn](https://www.linkedin.com/in/goh-wei-chong-9595ba1a7/). The site links to this profile. The profile headline, Singapore location, availability, and focus on data analytics, Python, SQL, visualisation, and machine learning were reviewed during creation.
 - **Visual reference:** [Anri's Framer portfolio](https://anri.framer.website/#footer), used for visual direction, rather than for personal content or assets.
-- **Footer artwork:** [Artwork provenance and generation prompt](docs/ASSETS.md) documents the editable station drawing, generated Shisa illustration, and their visual references.
+- **Footer artwork and dialogue:** [Artwork credits and dialogue sources](docs/ASSETS.md) documents the editable station drawing, official Shisa sprite, and original comic sources for the Japanese lines.
 
 The three project source links were verified against their GitHub READMEs. The photography gallery uses twenty-five user-supplied images in portrait orientation, grouped into Street, Portraits, Interiors, and Details. Their locations and years remain blank until confirmed. The public files are auto-oriented, metadata-stripped WebP exports; the original photographs remain in Downloads outside this project. Unprovided live-demo links remain editable.
