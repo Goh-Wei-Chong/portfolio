@@ -28,7 +28,7 @@ The content module keeps personal information separate from page construction:
 
 List order determines presentation order. Stable IDs connect cards to their detailed content. Optional image and URL fields use `null` to represent missing user-provided material.
 
-The profile portrait uses the supplied image at `public/images/portrait/wei-chong.webp`; project covers retain designed placeholders. The gallery contains twenty user-supplied photographs in Street, Portraits, Interiors, and Details; it does not invent locations or dates. Adding or replacing an image requires a file in `public/` and a matching content path.
+The profile portrait uses the supplied image at `public/images/portrait/wei-chong.webp`; project covers retain designed placeholders. The gallery contains twenty-five user-supplied photographs in Street, Portraits, Interiors, and Details; all current images use portrait orientation. It does not invent locations or dates. Adding or replacing an image requires a file in `public/` and a matching content path.
 
 Text changes normally require only a content edit. New components or content fields require matching changes in `main.js`, the relevant styles, and the content checker.
 
@@ -53,7 +53,7 @@ Gallery cards use an optional `thumbnail` export. When dimensions are also suppl
 
 Optional `width` and `height` describe the full image after orientation and set its aspect ratio in the gallery, preserving both portrait and landscape framing. Future entries can omit the thumbnail and dimensions: rendering falls back to `src` and the orientation-based default shape.
 
-Entries marked `landscape` span a full gallery row. The gallery recalculates staggering and centers isolated closing portraits within each group between wide images, including after category filtering. These choices use the existing orientation and array order; no extra content fields are required.
+The gallery recalculates staggering and centers isolated closing portraits, including after category filtering. Future entries marked `landscape` span a full row and create a new layout group. These choices use the existing orientation and array order; no extra content fields are required.
 
 ## Interactions
 

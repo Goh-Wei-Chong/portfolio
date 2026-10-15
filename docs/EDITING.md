@@ -98,7 +98,7 @@ These are preparation guidelines, not exact required dimensions.
 
 Use WebP or a well-compressed JPEG for photographs. PNG is useful for screenshots that need crisp text or transparency. Aim for a few hundred kilobytes per normal gallery image where the quality permits it. Avoid uploading full-resolution camera originals with several megabytes of data.
 
-The twenty supplied gallery photographs have been auto-oriented and exported to WebP with metadata removed. Their original files remain in Downloads outside the repository. Apply orientation before exporting future images and review or remove location and camera metadata before publishing.
+The twenty-five supplied gallery photographs have been auto-oriented and exported to WebP with metadata removed. Their original files remain in Downloads outside the repository. Apply orientation before exporting future images and review or remove location and camera metadata before publishing.
 
 ## Edit or add a project
 
@@ -175,7 +175,7 @@ If you remove an entire section's content, preview the page to confirm that its 
 
 Place your image files in `public/images/photography/`, then edit the `photos` array.
 
-The gallery contains twenty supplied photographs in Street, Portraits, Interiors, and Details. It includes portrait and landscape images; their dimensions preserve the original framing. Locations and years are blank because those details have not been confirmed. The home page previews the first three entries, with two visible on small phones. You can reorder or remove entries freely.
+The gallery contains twenty-five supplied photographs in Street, Portraits, Interiors, and Details. All current images use portrait orientation; their dimensions preserve the original framing. Locations and years are blank because those details have not been confirmed. The home page previews the first three entries, with two visible on small phones. You can reorder or remove entries freely.
 
 Copy an existing object for every additional image, or use this example:
 
@@ -208,9 +208,9 @@ Copy an existing object for every additional image, or use this example:
 
 The page builds its category filters from the photograph data, so new categories do not need separate buttons in the HTML. Use a category other than the reserved filter name `All`. The order of entries in `photos` determines their order in the gallery. When location and year are blank, the card caption shows its category.
 
-The gallery recalculates spacing after filtering and centers a portrait left alone before a wide image or at the end of a group. You do not need an additional content field for these layout choices.
+The gallery recalculates spacing after filtering and centers a portrait left alone at the end of a group. Future landscape additions create full-width breaks, with spacing adjusted around them automatically. You do not need an additional content field for these layout choices.
 
-Open a real photograph to check its larger lightbox view, caption, next/previous navigation, and close control. Check both portrait and landscape images.
+Open a photograph to check its larger lightbox view, caption, next/previous navigation, and close control. If you add landscape photographs, check their full-width gallery layout as well.
 
 The lightbox follows the currently selected category. Use its arrow buttons or the left/right arrow keys to move between frames; use the close button or `Escape` to return to the gallery. An empty frame opens an explanation that it is ready for your photograph.
 
