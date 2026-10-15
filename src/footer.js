@@ -1,11 +1,20 @@
 const esc = (value = '') => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 
-// Shisa's spoken lines from Nagano's original comic; English is our translation.
-// Keep source links with each quote when adding or reordering messages.
+// Custom messages supplied by Wei Chong. Add or reorder strings here.
 export const shisaMessages = [
-  { text: 'どうぞッ', translation: 'Here you go!', source: 'https://x.com/ngnchiikawa/status/1429862846934896649' },
-  { text: 'さたぱんびん', translation: 'Okinawan doughnuts', source: 'https://x.com/ngnchiikawa/status/1429862846934896649' },
-  { text: 'お師匠ッ', translation: 'Master!', source: 'https://x.com/ngnchiikawa/status/1430926333165531138' },
+  "thanks for stopping by!",
+  "oshisho!",
+  "have a look at my photos!",
+  "get some rest",
+  "quit, don't quit",
+  "noodles, don't noodles",
+  "i'm bored now",
+  "you know what they say, do what you love and stop working, or something like that",
+  "hungry?",
+  "i'm running out of things to say",
+  "Up is the best Pixar movie and I will die on this hill",
+  "do yourself a favor and watch the Loki series",
+  "why are you still here?"
 ];
 
 const icons = {
@@ -30,8 +39,8 @@ export function footerMarkup({ profile, homeUrl, aboutUrl, photoUrl, assetUrl })
         <div class="footer-scene">
           <img class="last-stop-art" src="${assetUrl('images/footer/last-stop.svg')}" alt="" aria-hidden="true" loading="lazy" width="1000" height="390" />
           <div class="shisa-greeting">
-            <p class="shisa-speech" id="shisa-speech" aria-hidden="true"></p>
-            <p class="sr-only" data-shisa-announcement role="status" aria-live="polite" aria-atomic="true"></p>
+            <p class="shisa-speech" id="shisa-speech" lang="en" aria-hidden="true"></p>
+            <p class="sr-only" data-shisa-announcement lang="en" role="status" aria-live="polite" aria-atomic="true"></p>
             <button type="button" class="shisa-button" aria-label="Say hello to Shisa" aria-describedby="shisa-hint" aria-controls="shisa-speech" aria-expanded="false"><span class="shisa-art" aria-hidden="true"><img src="${assetUrl('images/footer/shisa-official.png')}" alt="" width="3766" height="463" loading="lazy" decoding="async" /></span></button>
           </div>
           <span class="shisa-hint" id="shisa-hint">SHISA’S HERE. HOVER OR TAP TO SAY HELLO.</span>
@@ -65,8 +74,8 @@ export function initFooter() {
     lastSpoke = performance.now();
     clearTimeout(dismissTimer);
     const message = shisaMessages[nextMessage++ % shisaMessages.length];
-    speech.innerHTML = `<span class="shisa-quote" lang="ja">${esc(message.text)}</span><span class="shisa-translation" lang="en">${esc(message.translation)}</span>`;
-    announcement.innerHTML = `<span lang="ja">${esc(message.text)}</span> <span lang="en">${esc(message.translation)}</span>`;
+    speech.textContent = message;
+    announcement.textContent = message;
     greeting.classList.add('is-chatty');
     button.setAttribute('aria-expanded', 'true');
     if (!pointerInside && !button.matches(':focus-visible')) dismissTimer = setTimeout(hide, 6000);

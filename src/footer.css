@@ -48,8 +48,6 @@
 .shisa-button:hover, .shisa-button:focus-visible { transform: translateY(-3px) rotate(-3deg); }
 .shisa-speech { position: absolute; bottom: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(5px); width: clamp(180px, 22vw, 240px); padding: 15px 18px; border-radius: 16px 16px 16px 4px; color: #252820; background: var(--footer-ink); font-size: 13px; line-height: 1.5; text-align: center; box-shadow: 0 5px 0 #080c0733; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .15s, transform .15s; }
 .shisa-speech::after { content: ''; position: absolute; bottom: -8px; left: calc(50% - 8px); border-inline: 8px solid transparent; border-top: 9px solid var(--footer-ink); }
-.shisa-quote { display: block; font-size: 18px; font-weight: 500; letter-spacing: .02em; }
-.shisa-translation { display: block; margin-top: 6px; color: #5e6657; font-size: 11px; line-height: 1.5; }
 .is-chatty .shisa-speech { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
 .shisa-hint { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); font-family: monospace; color: var(--footer-muted); font-size: 9px; letter-spacing: .07em; white-space: nowrap; }
 .footer-identity { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
@@ -92,8 +90,6 @@
   .footer-scene { width: calc(100% + 16px); margin: 34px -8px 32px; padding-bottom: 30px; }
   .shisa-greeting { bottom: calc(17% + 30px); }
   .shisa-speech { width: 182px; padding: 12px 14px; font-size: 11px; bottom: calc(100% + 8px); }
-  .shisa-quote { font-size: 16px; }
-  .shisa-translation { font-size: 10px; margin-top: 5px; }
   .shisa-hint { font-size: 7px; letter-spacing: .015em; }
   .footer-identity { display: block; }
   .end-signature { font-size: 25px; gap: 11px; }
