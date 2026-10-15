@@ -87,7 +87,7 @@ The home page portrait's hover effect is defined by `.hero-portrait:hover .portr
 
 The bubble stays visible while the pointer is within the mascot/bubble greeting area or the button has keyboard focus. Pointer exit dismisses it after 200 milliseconds when keyboard focus is absent; blur dismisses it when the pointer is outside. A document-level Escape handler also closes it. The six-second dismissal timer applies to activations without persistent hover or keyboard focus, such as a tap. The footer retains the profile's contact links and email-copy control, alongside a back-to-top link to the shared header's `#top` anchor.
 
-`src/footer.css` owns the `--footer-*` palette variables, illustration placement, and responsive layout. Olive backgrounds, cream line art, and terracotta accents match the rest of the site. Dark overrides reuse the shared theme values.
+`src/footer.css` owns the `--footer-*` palette variables, illustration placement, and responsive layout. Olive backgrounds, cream line art, and red accents match the rest of the site. Dark overrides reuse the shared theme values.
 
 The footer's assets are the original station drawing at `public/images/footer/last-stop.svg` and the unmodified official sprite at `public/images/footer/shisa-official.png`. The `.shisa-art` CSS window displays the Shisa region of the sprite. Decorative artwork stays outside the accessibility tree, while the mascot remains accessible to keyboard and touch interaction. The shared footer styling loads after the general theme styles so its scene colors can adapt to either mode. [Artwork credits and custom message notes](ASSETS.md) are documented separately.
 

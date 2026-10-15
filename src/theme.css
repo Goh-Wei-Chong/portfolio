@@ -12,7 +12,7 @@
   --ink: #f0efe7;
   --muted: #b2b9a7;
   --line: #3a4337;
-  --accent: #ef927b;
+  --accent: var(--accent-on-dark);
   --surface: #22291f;
   --control-border: #738165;
   color: var(--ink);

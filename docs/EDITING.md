@@ -261,11 +261,13 @@ location.reload();
 
 Review both themes after palette edits, including project details, the photograph lightbox, focus outlines, and the header toggle. Keep the existing reduced-motion rules when adjusting transitions.
 
+The light accent `--accent: #a2302e` in `src/styles.css` matches the red in the supplied Anri reference screenshot. `--accent-on-dark: #ef8c89` supplies a lighter red for dark mode and the olive footer. The vertical “BUILDING. LEARNING. OBSERVING.” label uses a 1px underline in the active accent color; its vertical writing direction carries the underline alongside the text.
+
 ### Portrait hover animation
 
 The home page portrait gently sways on hover around the thumbtack's point. In `src/styles.css`, edit `.hero-portrait:hover .portrait-frame` for the animation timing and `@keyframes portrait-sway` for its movement. The frame rotates between 3 and −3 degrees over 2.6 seconds, without sideways translation. `--portrait-pivot-y` places the pivot 12px below the frame's top centre (9px on phones). The effect is enabled only for a fine pointer that supports hover and when `prefers-reduced-motion` is `no-preference`. Preserve those media-query guards when changing the animation.
 
-The terracotta thumbtack is drawn in CSS with `.portrait-pin` and its two pseudo-elements. Its markup is a decorative, screen-reader-hidden sibling of the photo frame in `portrait()` in `src/main.js`. The tack stays fixed while the frame rotates around its top centre. Edit those CSS rules to change its position, size, highlight, or shadow; the phone rule scales it down. No image asset is needed.
+The red thumbtack is drawn in CSS with `.portrait-pin` and its two pseudo-elements. Its markup is a decorative, screen-reader-hidden sibling of the photo frame in `portrait()` in `src/main.js`. The tack stays fixed while the frame rotates around its top centre. Edit those CSS rules to change its position, size, highlight, or shadow; the phone rule scales it down. No image asset is needed.
 
 ### Illustrated contact footer
 
@@ -275,7 +277,7 @@ Edit `footerMarkup()` in `src/footer.js` for the footer markup, and the exported
 
 Hovering, focusing, or clicking/tapping the mascot advances through the messages; keyboard users can also activate its button with Enter or Space. The bubble stays open while the pointer is over the mascot or speech bubble, or while the button has keyboard focus. It dismisses shortly after the pointer leaves without keyboard focus, or when focus leaves while the pointer is outside. Escape dismisses it from anywhere on the page. Tap interactions without persistent hover or keyboard focus dismiss after six seconds. `initFooter()` manages these interactions.
 
-Edit `src/footer.css` for the scene layout, speech bubble, illustration placement, and responsive rules. Its `.last-stop-footer` variables—`--footer-bg`, `--footer-end`, `--footer-ink`, `--footer-muted`, `--footer-line`, and `--footer-accent`—control the footer palette, with dark overrides under `:root[data-theme="dark"] .last-stop-footer`. The footer uses the site's olive, cream, and terracotta palette; dark mode reuses the shared dark theme values. Keep both palettes readable when changing them.
+Edit `src/footer.css` for the scene layout, speech bubble, illustration placement, and responsive rules. Its `.last-stop-footer` variables—`--footer-bg`, `--footer-end`, `--footer-ink`, `--footer-muted`, `--footer-line`, and `--footer-accent`—control the footer palette, with dark overrides under `:root[data-theme="dark"] .last-stop-footer`. The footer uses the site's olive, cream, and red palette; dark mode reuses the shared dark theme values. Keep both palettes readable when changing them.
 
 The scene illustration is `public/images/footer/last-stop.svg`; its SVG stroke colors control the cream line art. `public/images/footer/shisa-official.png` is an unmodified official character sprite. `.shisa-art` in `src/footer.css` selects the visible Shisa region; update that CSS window if you replace the sprite. Retain the official artwork credit in the footer. See [the artwork notes](ASSETS.md) for the source, attribution, and sprite dimensions.
 

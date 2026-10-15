@@ -6,7 +6,7 @@
 
 ## Footer artwork and messages
 
-The footer combines an original, editable station drawing with official Shisa character artwork. Its visual direction came from the illustrated ending on [Elaine Yu's portfolio](https://www.elaineyu.design/). The scene uses this site's olive, cream, and terracotta palette.
+The footer combines an original, editable station drawing with official Shisa character artwork. Its visual direction came from the illustrated ending on [Elaine Yu's portfolio](https://www.elaineyu.design/). The scene uses this site's olive, cream, and red palette.
 
 ## Artwork
 
