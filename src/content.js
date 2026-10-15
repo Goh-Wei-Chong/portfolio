@@ -60,13 +60,36 @@ export const skills = [
   { label: 'Beyond the code', items: ['Teaching & mentoring', 'Research & documentation', 'Photoshop', 'Illustrator', 'Photography'] },
 ];
 
-// Intentional empty frames, not photographs attributed to Wei Chong.
-// Add your own files, then update src, title, location, year, and alt.
+// Curated in rows: warm portrait / blue interior / record-shop detail,
+// then cinema / listening / print, ending with shopfronts and a quiet glimpse.
+// src is the large lightbox image; thumbnail is the optional 900px export.
+// Locations and dates are left blank until confirmed by the photographer.
 export const photos = [
-  { id: 'frame-01', title: 'An everyday pause', category: 'Street', location: '', year: '', src: null, alt: '', orientation: 'portrait' },
-  { id: 'frame-02', title: 'Somewhere, slowly', category: 'Travel', location: '', year: '', src: null, alt: '', orientation: 'landscape' },
-  { id: 'frame-03', title: 'Looking up', category: 'Street', location: '', year: '', src: null, alt: '', orientation: 'portrait' },
-  { id: 'frame-04', title: 'Room to breathe', category: 'Nature', location: '', year: '', src: null, alt: '', orientation: 'landscape' },
-  { id: 'frame-05', title: 'Between places', category: 'Travel', location: '', year: '', src: null, alt: '', orientation: 'portrait' },
-  { id: 'frame-06', title: 'The quieter details', category: 'Nature', location: '', year: '', src: null, alt: '', orientation: 'landscape' },
+  { id: 'between-floors', title: 'Between floors', category: 'Portraits', location: '', year: '',
+    src: 'images/photography/dscf0287.webp', thumbnail: 'images/photography/dscf0287-900.webp', width: 1467, height: 2200,
+    alt: 'A woman standing in a pale blue lift, framed by warm amber mosaic tiles.', orientation: 'portrait' },
+  { id: 'electric-blue', title: 'Electric blue', category: 'Interiors', location: '', year: '',
+    src: 'images/photography/dscf0312.webp', thumbnail: 'images/photography/dscf0312-900.webp', width: 1467, height: 2200,
+    alt: 'A visitor looking at illuminated film posters in a dark, blue-lit interior.', orientation: 'portrait' },
+  { id: 'in-the-grooves', title: 'In the grooves', category: 'Details', location: '', year: '',
+    src: 'images/photography/dscf0302.webp', thumbnail: 'images/photography/dscf0302-900.webp', width: 1467, height: 2200,
+    alt: 'Rows of records beneath a wall of colourful album sleeves and framed magazine covers.', orientation: 'portrait' },
+  { id: 'stories-in-colour', title: 'Stories in colour', category: 'Details', location: '', year: '',
+    src: 'images/photography/dscf0307.webp', thumbnail: 'images/photography/dscf0307-900.webp', width: 1467, height: 2200,
+    alt: 'Illuminated Singapore film posters glowing red, gold, and blue against a dark wall.', orientation: 'portrait' },
+  { id: 'on-repeat', title: 'On repeat', category: 'Portraits', location: '', year: '',
+    src: 'images/photography/dscf0320.webp', thumbnail: 'images/photography/dscf0320-900.webp', width: 1467, height: 2200,
+    alt: 'A woman adjusting headphones in front of a tiled wall and listening stations.', orientation: 'portrait' },
+  { id: 'pages-of-home', title: 'Pages of home', category: 'Details', location: '', year: '',
+    src: 'images/photography/dscf0290.webp', thumbnail: 'images/photography/dscf0290-900.webp', width: 1467, height: 2200,
+    alt: 'Vintage Our Home magazine covers displayed behind glass in soft amber light.', orientation: 'portrait' },
+  { id: 'familiar-glow', title: 'Familiar glow', category: 'Portraits', location: '', year: '',
+    src: 'images/photography/dscf0255.webp', thumbnail: 'images/photography/dscf0255-900.webp', width: 1467, height: 2200,
+    alt: 'A woman standing outside a brightly lit 7-Eleven storefront with red and green signs.', orientation: 'portrait' },
+  { id: 'through-the-glass', title: 'Through the glass', category: 'Interiors', location: '', year: '',
+    src: 'images/photography/dscf0306.webp', thumbnail: 'images/photography/dscf0306-900.webp', width: 1467, height: 2200,
+    alt: 'A blurred foreground reflection partially obscuring a warm-lit shop display and FairPrice sign.', orientation: 'portrait' },
+  { id: 'a-glimpse', title: 'A glimpse', category: 'Portraits', location: '', year: '',
+    src: 'images/photography/dscf0254.webp', thumbnail: 'images/photography/dscf0254-900.webp', width: 1467, height: 2200,
+    alt: 'A woman holding a phone, seen through a narrow gap with a glowing shop sign above.', orientation: 'portrait' },
 ];
