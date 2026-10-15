@@ -27,7 +27,7 @@ function portrait() {
   return `<div class="hero-portrait"><div class="portrait-frame">${profile.portrait.src
     ? `<img src="${asset(profile.portrait.src)}" alt="${esc(profile.portrait.alt)}" width="960" height="1280" fetchpriority="high" decoding="async" />`
     : `<div class="portrait-placeholder" role="img" aria-label="A space for Wei Chong’s portrait"><span class="corner corner-tl"></span><span class="corner corner-br"></span><div class="portrait-monogram">w<span>c.</span></div><span class="placeholder-caption">YOUR PORTRAIT HERE <span>${arrow}</span></span></div>`}
-    <span class="portrait-note"><span class="status-dot"></span>${esc(profile.availability)}</span></div></div>`;
+    <span class="portrait-note"><span class="status-dot"></span>${esc(profile.availability)}</span></div><span class="portrait-pin" aria-hidden="true"></span></div>`;
 }
 
 function projectArtwork(project, index) {
