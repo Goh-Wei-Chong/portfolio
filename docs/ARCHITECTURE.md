@@ -24,11 +24,11 @@ The content module keeps personal information separate from page construction:
 | `experience` | Professional experience |
 | `education` | Qualifications and education |
 | `skills` | Published skills |
-| `photos` | Gallery images, captions, categories, and orientation |
+| `photos` | Full images, optional thumbnails and dimensions, captions, categories, and orientation |
 
 List order determines presentation order. Stable IDs connect cards to their detailed content. Optional image and URL fields use `null` to represent missing user-provided material.
 
-The initial website intentionally includes image placeholders. They give the user a usable layout before portraits, project covers, and photographs are supplied, without inventing personal imagery. Adding an image requires a file in `public/` and a matching content path.
+The portrait and project covers retain designed placeholders. The gallery contains nine user-supplied photographs in Portraits, Interiors, and Details; it does not invent locations or dates. Adding or replacing an image requires a file in `public/` and a matching content path.
 
 Text changes normally require only a content edit. New components or content fields require matching changes in `main.js`, the relevant styles, and the content checker.
 
@@ -48,6 +48,10 @@ The renderer's asset helper prepends `import.meta.env.BASE_URL` to local asset p
 This is why content paths omit both `public/` and a leading slash. Hardcoding `/images/...` would point to the domain root and fail for a project deployed under `/portfolio/`.
 
 External contact and project links remain complete URLs. The resume is an optional public asset and follows the same base path handling as images.
+
+Gallery cards use an optional `thumbnail` export. When dimensions are also supplied, responsive `srcset` markup offers the thumbnail and full `src`; its thumbnail width calculation assumes a 900-pixel long edge. The lightbox uses `src`. The current WebP exports have a 2200-pixel long edge for full images and a 900-pixel long edge for thumbnails. Orientation is applied before export, metadata is removed, and the original photographs remain outside the repository in Downloads.
+
+Optional `width` and `height` describe the full image after orientation and set its aspect ratio in the gallery. The nine current portrait images preserve their 2:3 framing. Future entries can omit the thumbnail and dimensions: rendering falls back to `src` and the orientation-based default shape.
 
 ## Interactions
 

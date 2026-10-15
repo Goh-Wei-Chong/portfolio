@@ -93,12 +93,12 @@ These are preparation guidelines, not exact required dimensions.
 | --- | --- | --- |
 | Portrait | 1200 × 1500 px | Leave some space around your face for responsive cropping. |
 | Project cover | 1600 × 1100 px | Put essential information away from the edges. |
-| Landscape photo | Around 2000 px on the long edge | Preserve the photo's original aspect ratio. |
-| Portrait photo | Around 2000 px on the long edge | Mark its orientation as `portrait`. |
+| Full gallery photo | Around 2200 px on the long edge | Preserve its original aspect ratio; used in the lightbox. |
+| Gallery thumbnail | 900 px on the long edge | Optional smaller export of the same photograph for cards. |
 
 Use WebP or a well-compressed JPEG for photographs. PNG is useful for screenshots that need crisp text or transparency. Aim for a few hundred kilobytes per normal gallery image where the quality permits it. Avoid uploading full-resolution camera originals with several megabytes of data.
 
-Image files can contain location and camera metadata. Review the metadata before publishing if that information is private.
+The nine supplied photographs have been auto-oriented and exported to WebP with metadata removed. Their original files remain in Downloads outside the repository. Apply orientation before exporting future images and review or remove location and camera metadata before publishing.
 
 ## Edit or add a project
 
@@ -175,33 +175,38 @@ If you remove an entire section's content, preview the page to confirm that its 
 
 Place your image files in `public/images/photography/`, then edit the `photos` array.
 
-The starter gallery contains six empty frames. You can fill as many as you want and delete the unused objects; there is no requirement to publish all six. The displayed frame count includes empty slots as well as supplied photographs. The home page previews the first three entries, or fewer if your list is shorter.
+The gallery contains nine supplied photographs in Portraits, Interiors, and Details. All are portrait images; their dimensions preserve the original 2:3 framing. Locations and years are blank because those details have not been confirmed. The home page previews the first three entries, or fewer if your list is shorter. You can reorder or remove entries freely.
 
-Replace the placeholder objects or copy one for every additional image:
+Copy an existing object for every additional image, or use this example:
 
 ```js
 {
   id: 'city-evening',
   title: 'City at evening',
   category: 'Street',
-  location: 'Singapore',
-  year: '2026',
+  location: '',
+  year: '',
   src: 'images/photography/city-evening.webp',
+  thumbnail: 'images/photography/city-evening-thumb.webp',
+  width: 1467,
+  height: 2200,
   alt: 'A person crossing a street beneath illuminated signs at dusk',
-  orientation: 'landscape',
+  orientation: 'portrait',
 },
 ```
 
 - `id` must be unique.
 - `title` is the photograph's displayed name.
 - `category` controls category grouping. Reuse the same spelling and capitalization for photographs in the same category.
-- `location` can be a city, country, broader region, or a label you are comfortable making public.
-- `year` describes when the photograph was made.
-- `src` is the image path; `null` retains the designed placeholder.
+- `location` can be a confirmed city, country, or broader region; leave it as `''` when unknown or private.
+- `year` describes when the photograph was made; leave it as `''` when unknown.
+- `src` is the full image path, used in the lightbox; `null` retains the designed placeholder.
+- `thumbnail` is an optional smaller image path for cards. Export it with a 900-pixel long edge, or keep the original size if the source is smaller. Omit it to use `src` throughout. With dimensions supplied as well, the browser can select the full image for larger or higher-density displays.
+- `width` and `height` are the full exported image's pixel dimensions after orientation has been applied. Supply both as positive integers to preserve the correct gallery aspect ratio. Omit both to use the existing orientation-based defaults.
 - `alt` describes the visible subject, rather than repeating only the title.
-- `orientation` is either `landscape` or `portrait` and helps the gallery layout.
+- `orientation` is either `landscape` or `portrait` and supplies the fallback gallery shape when dimensions are omitted.
 
-The page builds its category filters from the photograph data, so new categories do not need separate buttons in the HTML. The order of entries in `photos` determines their order in the gallery.
+The page builds its category filters from the photograph data, so new categories do not need separate buttons in the HTML. Use a category other than the reserved filter name `All`. The order of entries in `photos` determines their order in the gallery. When location and year are blank, the card caption shows its category.
 
 Open a real photograph to check its larger lightbox view, caption, next/previous navigation, and close control. Check both portrait and landscape images.
 
