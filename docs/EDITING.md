@@ -257,11 +257,15 @@ location.reload();
 
 Review both themes after palette edits, including project details, the photograph lightbox, focus outlines, and the header toggle. Keep the existing reduced-motion rules when adjusting transitions.
 
+### Portrait hover animation
+
+The home page portrait wobbles on hover. In `src/styles.css`, edit `.hero-portrait:hover .portrait-frame` for the animation timing and `@keyframes portrait-shake` for its movement. The effect is enabled only for a fine pointer that supports hover and when `prefers-reduced-motion` is `no-preference`. Preserve those media-query guards when changing the animation.
+
 ### Illustrated contact footer
 
 Both pages end with an illustrated “last stop” scene and a **Say hello** contact area. The footer keeps the email link, copy-email control, GitHub, LinkedIn, photography link, and a back-to-top action. Contact details still come from `profile` in `src/content.js`.
 
-Edit `footerMarkup()` in `src/footer.js` for the footer markup, and the exported `shisaMessages` array for Shisa's dialogue. Keep at least one message object in the array. Each object contains `text` for the verified Japanese line, `translation` for its English translation, and `source` for the complete original comic post URL. Preserve the source with each line when reordering or adding messages. The English wording is translated for this portfolio. See [the dialogue sources](ASSETS.md#dialogue) before changing the Japanese text.
+Edit `footerMarkup()` in `src/footer.js` for the footer markup, and the exported `shisaMessages` array for Shisa's dialogue. The array contains thirteen user-authored English strings. Edit, reorder, or add strings directly, keeping at least one message in the array. Use double quotes or escape apostrophes when needed, and retain commas between entries. See [the message notes](ASSETS.md#messages) for their context.
 
 Hovering, focusing, or clicking/tapping the mascot advances through the messages; keyboard users can also activate its button with Enter or Space. The bubble stays open while the pointer is over the mascot or speech bubble, or while the button has keyboard focus. It dismisses shortly after the pointer leaves without keyboard focus, or when focus leaves while the pointer is outside. Escape dismisses it from anywhere on the page. Tap interactions without persistent hover or keyboard focus dismiss after six seconds. `initFooter()` manages these interactions.
 
@@ -269,7 +273,7 @@ Edit `src/footer.css` for the scene layout, speech bubble, illustration placemen
 
 The scene illustration is `public/images/footer/last-stop.svg`; its SVG stroke colors control the cream line art. `public/images/footer/shisa-official.png` is an unmodified official character sprite. `.shisa-art` in `src/footer.css` selects the visible Shisa region; update that CSS window if you replace the sprite. Retain the official artwork credit in the footer. See [the artwork notes](ASSETS.md) for the source, attribution, and sprite dimensions.
 
-Keep purely decorative scene details out of the accessibility tree, retain the mascot's keyboard interaction, language tags, and separate screen-reader announcement region, and check the contact controls and speech bubble at phone widths.
+Keep purely decorative scene details out of the accessibility tree, retain the mascot's keyboard interaction and separate screen-reader announcement region, and check the contact controls and speech bubble at phone widths.
 
 The credit line in `footerMarkup()` is: “Made with curiosity, a camera, and time that should've been used studying :p”. Edit the `.footer-colophon` text there to change it.
 

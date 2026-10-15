@@ -1,4 +1,4 @@
-# Footer artwork and dialogue
+# Footer artwork and messages
 
 The footer combines an original, editable station drawing with official Shisa character artwork. Its visual direction came from the illustrated ending on [Elaine Yu's portfolio](https://www.elaineyu.design/). The scene uses this site's olive, cream, and terracotta palette.
 
@@ -19,18 +19,10 @@ The stored file's SHA-256 is:
 856b8b0e181c4a1c2a826816ed0b19eaad271fb580e76c5b21273885ec0ff07e
 ```
 
-## Dialogue
+## Messages
 
-The `shisaMessages` array in `src/footer.js` contains three short Japanese dialogue excerpts from Nagano's original Shisa comics. The first two entries come from [this original comic post](https://x.com/ngnchiikawa/status/1429862846934896649); the third comes from [this follow-up comic post](https://x.com/ngnchiikawa/status/1430926333165531138). The Japanese speech was checked against the original comic images.
+The `shisaMessages` array in `src/footer.js` contains thirteen user-authored English messages for this portfolio. The official character image retains its separate artwork attribution above.
 
-Each entry preserves its provenance:
+Each entry is a plain JavaScript string. Edit or reorder those strings directly and keep at least one entry. The speech bubble displays the message in English, and a separate polite live region announces the same text for screen readers.
 
-| Field | Meaning |
-| --- | --- |
-| `text` | Verified Japanese dialogue excerpt from the original comic |
-| `translation` | English translation prepared for this portfolio |
-| `source` | Complete URL of the original Nagano comic post |
-
-Keep source links with the quotes and verify the original Japanese speech before adding a line. The bubble and its screen-reader announcement mark Japanese text with `lang="ja"` and the English translation with `lang="en"`.
-
-Dialogue behavior and footer markup live in `src/footer.js`; sprite framing, speech-bubble styling, and theme colors live in `src/footer.css`.
+Message behavior and footer markup live in `src/footer.js`; sprite framing, speech-bubble styling, and theme colors live in `src/footer.css`.

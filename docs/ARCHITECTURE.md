@@ -65,6 +65,7 @@ The shared JavaScript manages the following browser interactions:
 - A gallery lightbox with caption and navigation controls; empty slots open an explanatory frame view.
 - A shared light/dark theme toggle with a saved browser preference.
 - An illustrated shared contact footer with a back-to-top action and Shisa messages for hover, focus, and tap interaction.
+- A CSS portrait wobble for fine-pointer hover when reduced motion is not requested.
 
 Keyboard access, visible focus states, and the ability to close overlays are part of the interaction design. When changing an overlay, verify focus behavior and keyboard controls as well as pointer interaction. When changing gallery filtering, confirm that the visible photo order and lightbox navigation remain consistent.
 
@@ -76,15 +77,17 @@ Images without a real source remain placeholders. They should not be treated as 
 
 The home page and photography page share navigation, typography, and contact styling. Component classes provide local variations, while responsive rules adapt grids and spacing to narrower screens. Keep reduced-motion behavior and visible focus treatment intact when adjusting animation or transitions.
 
+The home page portrait's hover effect is defined by `.hero-portrait:hover .portrait-frame` and `@keyframes portrait-shake` in `src/styles.css`. Its media query requires hover support, a fine pointer, and `prefers-reduced-motion: no-preference`.
+
 `public/theme-init.js` reads a saved `light` or `dark` value from local storage under `gwc-theme`, falling back to the system color preference. It sets the root `data-theme`, `color-scheme`, and browser `theme-color` before the main module renders. `src/theme.js` renders and manages the header control, follows system changes until a manual choice is made, and persists choices across both pages. Storage changes also synchronize open tabs. Theme behavior runs entirely in the browser; unavailable storage does not prevent the current page's toggle from working.
 
-`src/footer.js` exports `footerMarkup()` for the shared contact scene and `initFooter()` for the interactive Shisa mascot. Its exported `shisaMessages` array contains objects with verified Japanese `text`, a portfolio-authored English `translation`, and the original comic post `source`. Hover, focus, and button activation cycle through messages, with a brief guard against duplicate events from one gesture. The visual bubble is `aria-hidden`; a separate visually hidden `[data-shisa-announcement]` polite live region announces the messages. Both render Japanese and English with their corresponding language tags.
+`src/footer.js` exports `footerMarkup()` for the shared contact scene and `initFooter()` for the interactive Shisa mascot. Its exported `shisaMessages` array contains thirteen custom English strings supplied by the user. Hover, focus, and button activation cycle through messages, with a brief guard against duplicate events from one gesture. The visual bubble is `aria-hidden`; a separate visually hidden `[data-shisa-announcement]` polite live region announces the same English text.
 
 The bubble stays visible while the pointer is within the mascot/bubble greeting area or the button has keyboard focus. Pointer exit dismisses it after 200 milliseconds when keyboard focus is absent; blur dismisses it when the pointer is outside. A document-level Escape handler also closes it. The six-second dismissal timer applies to activations without persistent hover or keyboard focus, such as a tap. The footer retains the profile's contact links and email-copy control, alongside a back-to-top link to the shared header's `#top` anchor.
 
 `src/footer.css` owns the `--footer-*` palette variables, illustration placement, and responsive layout. Olive backgrounds, cream line art, and terracotta accents match the rest of the site. Dark overrides reuse the shared theme values.
 
-The footer's assets are the original station drawing at `public/images/footer/last-stop.svg` and the unmodified official sprite at `public/images/footer/shisa-official.png`. The `.shisa-art` CSS window displays the Shisa region of the sprite. Decorative artwork stays outside the accessibility tree, while the mascot remains accessible to keyboard and touch interaction. The shared footer styling loads after the general theme styles so its scene colors can adapt to either mode. [Artwork credits and dialogue sources](ASSETS.md) are documented separately.
+The footer's assets are the original station drawing at `public/images/footer/last-stop.svg` and the unmodified official sprite at `public/images/footer/shisa-official.png`. The `.shisa-art` CSS window displays the Shisa region of the sprite. Decorative artwork stays outside the accessibility tree, while the mascot remains accessible to keyboard and touch interaction. The shared footer styling loads after the general theme styles so its scene colors can adapt to either mode. [Artwork credits and custom message notes](ASSETS.md) are documented separately.
 
 ## Validation
 
