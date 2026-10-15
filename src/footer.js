@@ -1,3 +1,5 @@
+import { icon as uiIcon } from './icons.js';
+
 const esc = (value = '') => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 
 // Custom messages supplied by Wei Chong. Add or reorder strings here.
@@ -30,12 +32,12 @@ export function footerMarkup({ profile, homeUrl, aboutUrl, photoUrl, assetUrl })
   return `<footer id="contact" class="site-footer last-stop-footer">
     <div class="wrap hello-wrap">
       <div class="hello-header"><span class="eyebrow">04 / SAY HELLO</span><span>A conversation is a good place to start.</span></div>
-      <div class="hello-title"><h2>Let’s make<br><em>something matter.</em></h2><a href="mailto:${esc(profile.email)}" class="hello-send" aria-label="Email Wei Chong">↗</a></div>
-      <div class="hello-contact"><a class="hello-email" href="mailto:${esc(profile.email)}">${esc(profile.email)}</a><button type="button" class="copy-email" aria-label="Copy email address">Copy email <span aria-hidden="true">⧉</span></button><span class="copy-status" role="status"></span></div>
+      <div class="hello-title"><h2>Let’s make<br><em>something matter.</em></h2><a href="mailto:${esc(profile.email)}" class="hello-send" aria-label="Email Wei Chong">${uiIcon('arrow-up-right')}</a></div>
+      <div class="hello-contact"><a class="hello-email" href="mailto:${esc(profile.email)}">${esc(profile.email)}</a><button type="button" class="copy-email" aria-label="Copy email address">Copy email <span aria-hidden="true">${uiIcon('copy')}</span></button><span class="copy-status" role="status"></span></div>
     </div>
     <div class="last-stop-end">
       <div class="wrap">
-        <nav class="footer-wayfinding" aria-label="Keep exploring"><div><span class="next-stop">NEXT STOP ↓</span><a href="${esc(aboutUrl)}">about</a><a href="${esc(photoUrl)}">photography</a></div><a class="back-top" href="#top">↑ BACK TO TOP</a></nav>
+        <nav class="footer-wayfinding" aria-label="Keep exploring"><div><span class="next-stop">NEXT STOP ${uiIcon('arrow-down')}</span><a href="${esc(aboutUrl)}">about</a><a href="${esc(photoUrl)}">photography</a></div><a class="back-top" href="#top">${uiIcon('arrow-up')} BACK TO TOP</a></nav>
         <div class="footer-scene">
           <img class="last-stop-art" src="${assetUrl('images/footer/last-stop.svg')}" alt="" aria-hidden="true" loading="lazy" width="1000" height="390" />
           <div class="shisa-greeting">
