@@ -8,6 +8,8 @@ The site includes:
 - Project details that open without leaving the page.
 - A photography page with twenty-five supplied photographs, category filters, and an image lightbox.
 - A supplied profile portrait and designed placeholders for project images.
+- Light and dark themes on both pages, with a header toggle and a saved preference.
+- A decorative spiral arrow drawing attention to the home page portrait.
 - One central content file, responsive layouts, and a GitHub Pages deployment workflow.
 
 ## Run locally
@@ -42,7 +44,7 @@ Before sharing the website:
 - Review the project descriptions and supply any repository or live links you want to publish.
 - Confirm your email, LinkedIn, GitHub, availability, and current role are accurate.
 - Decide whether to publish a redacted resume and enable its download link.
-- Review the website on a narrow phone screen and a desktop screen.
+- Review both themes on a narrow phone screen and a desktop screen.
 
 The original resume is deliberately not included in the public website. It contains personal contact and referee information. The resume link starts disabled; see [adding a public resume](docs/EDITING.md#add-a-public-resume) for the exact steps.
 
@@ -58,8 +60,11 @@ portfolio/
 ├── src/
 │   ├── content.js                # Your profile, projects, experience, and photographs
 │   ├── main.js                   # Page rendering and interactions
-│   └── styles.css                # Shared visual styles and responsive behavior
+│   ├── styles.css                # Shared visual styles and responsive behavior
+│   ├── theme.js                  # Header theme toggle and preference handling
+│   └── theme.css                 # Dark palette, theme overrides, and toggle styles
 ├── public/
+│   ├── theme-init.js             # Applies the theme early on both pages
 │   └── images/
 │       ├── portrait/             # Profile portrait: wei-chong.webp
 │       ├── projects/             # Add project screenshots or covers here
