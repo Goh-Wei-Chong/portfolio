@@ -55,12 +55,12 @@ Find `profile` in `src/content.js`. Edit the existing fields:
 
 The oversized hero name, `GWC` brand, and some editorial copy are authored directly in `src/main.js` to preserve their specific layout. If you change your displayed name or those sentences, update the matching strings there as well as the profile fields and HTML metadata.
 
-For example, replace only the portrait fields inside the existing profile:
+The current portrait is `public/images/portrait/wei-chong.webp`. To replace it, update the portrait fields inside the existing profile:
 
 ```js
 portrait: {
   src: 'images/portrait/wei-chong.webp',
-  alt: 'Goh Wei Chong standing outdoors',
+  alt: 'Portrait of Goh Wei Chong',
 },
 ```
 
@@ -98,7 +98,7 @@ These are preparation guidelines, not exact required dimensions.
 
 Use WebP or a well-compressed JPEG for photographs. PNG is useful for screenshots that need crisp text or transparency. Aim for a few hundred kilobytes per normal gallery image where the quality permits it. Avoid uploading full-resolution camera originals with several megabytes of data.
 
-The nine supplied photographs have been auto-oriented and exported to WebP with metadata removed. Their original files remain in Downloads outside the repository. Apply orientation before exporting future images and review or remove location and camera metadata before publishing.
+The twenty supplied gallery photographs have been auto-oriented and exported to WebP with metadata removed. Their original files remain in Downloads outside the repository. Apply orientation before exporting future images and review or remove location and camera metadata before publishing.
 
 ## Edit or add a project
 
@@ -175,7 +175,7 @@ If you remove an entire section's content, preview the page to confirm that its 
 
 Place your image files in `public/images/photography/`, then edit the `photos` array.
 
-The gallery contains nine supplied photographs in Portraits, Interiors, and Details. All are portrait images; their dimensions preserve the original 2:3 framing. Locations and years are blank because those details have not been confirmed. The home page previews the first three entries, or fewer if your list is shorter. You can reorder or remove entries freely.
+The gallery contains twenty supplied photographs in Street, Portraits, Interiors, and Details. It includes portrait and landscape images; their dimensions preserve the original framing. Locations and years are blank because those details have not been confirmed. The home page previews the first three entries, with two visible on small phones. You can reorder or remove entries freely.
 
 Copy an existing object for every additional image, or use this example:
 
@@ -204,9 +204,11 @@ Copy an existing object for every additional image, or use this example:
 - `thumbnail` is an optional smaller image path for cards. Export it with a 900-pixel long edge, or keep the original size if the source is smaller. Omit it to use `src` throughout. With dimensions supplied as well, the browser can select the full image for larger or higher-density displays.
 - `width` and `height` are the full exported image's pixel dimensions after orientation has been applied. Supply both as positive integers to preserve the correct gallery aspect ratio. Omit both to use the existing orientation-based defaults.
 - `alt` describes the visible subject, rather than repeating only the title.
-- `orientation` is either `landscape` or `portrait` and supplies the fallback gallery shape when dimensions are omitted.
+- `orientation` is either `landscape` or `portrait` and supplies the fallback gallery shape when dimensions are omitted. Landscape entries automatically span the full gallery row.
 
 The page builds its category filters from the photograph data, so new categories do not need separate buttons in the HTML. Use a category other than the reserved filter name `All`. The order of entries in `photos` determines their order in the gallery. When location and year are blank, the card caption shows its category.
+
+The gallery recalculates spacing after filtering and centers a portrait left alone before a wide image or at the end of a group. You do not need an additional content field for these layout choices.
 
 Open a real photograph to check its larger lightbox view, caption, next/previous navigation, and close control. Check both portrait and landscape images.
 

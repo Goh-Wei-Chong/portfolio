@@ -28,7 +28,7 @@ The content module keeps personal information separate from page construction:
 
 List order determines presentation order. Stable IDs connect cards to their detailed content. Optional image and URL fields use `null` to represent missing user-provided material.
 
-The portrait and project covers retain designed placeholders. The gallery contains nine user-supplied photographs in Portraits, Interiors, and Details; it does not invent locations or dates. Adding or replacing an image requires a file in `public/` and a matching content path.
+The profile portrait uses the supplied image at `public/images/portrait/wei-chong.webp`; project covers retain designed placeholders. The gallery contains twenty user-supplied photographs in Street, Portraits, Interiors, and Details; it does not invent locations or dates. Adding or replacing an image requires a file in `public/` and a matching content path.
 
 Text changes normally require only a content edit. New components or content fields require matching changes in `main.js`, the relevant styles, and the content checker.
 
@@ -51,7 +51,9 @@ External contact and project links remain complete URLs. The resume is an option
 
 Gallery cards use an optional `thumbnail` export. When dimensions are also supplied, responsive `srcset` markup offers the thumbnail and full `src`; its thumbnail width calculation assumes a 900-pixel long edge. The lightbox uses `src`. The current WebP exports have a 2200-pixel long edge for full images and a 900-pixel long edge for thumbnails. Orientation is applied before export, metadata is removed, and the original photographs remain outside the repository in Downloads.
 
-Optional `width` and `height` describe the full image after orientation and set its aspect ratio in the gallery. The nine current portrait images preserve their 2:3 framing. Future entries can omit the thumbnail and dimensions: rendering falls back to `src` and the orientation-based default shape.
+Optional `width` and `height` describe the full image after orientation and set its aspect ratio in the gallery, preserving both portrait and landscape framing. Future entries can omit the thumbnail and dimensions: rendering falls back to `src` and the orientation-based default shape.
+
+Entries marked `landscape` span a full gallery row. The gallery recalculates staggering and centers isolated closing portraits within each group between wide images, including after category filtering. These choices use the existing orientation and array order; no extra content fields are required.
 
 ## Interactions
 
