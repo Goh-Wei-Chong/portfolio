@@ -6,8 +6,8 @@ The site includes:
 
 - A home page with an introduction, selected projects, experience, education, skills, and contact links.
 - Project details that open without leaving the page.
-- A photography page with category filters and an image lightbox.
-- Designed placeholders for a portrait, project images, and photographs, ready for your own images.
+- A photography page with nine supplied photographs, category filters, and an image lightbox.
+- Designed placeholders for a portrait and project images, ready for your own images.
 - One central content file, responsive layouts, and a GitHub Pages deployment workflow.
 
 ## Run locally
@@ -38,7 +38,7 @@ Edit [`src/content.js`](src/content.js) to update your information. Replace imag
 Before sharing the website:
 
 - Replace the portrait and project image placeholders.
-- Add your photographs and their titles, locations, categories, and alternative text.
+- Review the photograph titles and alternative text, add any known locations or dates, and add more photographs when ready.
 - Review the project descriptions and supply any repository or live links you want to publish.
 - Confirm your email, LinkedIn, GitHub, availability, and current role are accurate.
 - Decide whether to publish a redacted resume and enable its download link.
@@ -63,7 +63,7 @@ portfolio/
 │   └── images/
 │       ├── portrait/             # Add your portrait here
 │       ├── projects/             # Add project screenshots or covers here
-│       └── photography/          # Add your photographs here
+│       └── photography/          # Optimized photographs and smaller thumbnails
 ├── scripts/
 │   └── check-content.mjs         # Content and referenced-file checks
 ├── .github/workflows/
@@ -103,4 +103,4 @@ If you rename the repository, update the workflow's base path to match. If you u
 - **Professional profile:** [Goh Wei Chong on LinkedIn](https://www.linkedin.com/in/goh-wei-chong-9595ba1a7/). The site links to this profile. The profile headline, Singapore location, availability, and focus on data analytics, Python, SQL, visualisation, and machine learning were reviewed during creation.
 - **Visual reference:** [Anri's Framer portfolio](https://anri.framer.website/#footer), used for visual direction, rather than for personal content or assets.
 
-The three project source links were verified against their GitHub READMEs. Placeholder photographs and unprovided live-demo links are intentional editing prompts. Replace them with your own work and confirmed information before publishing those details.
+The three project source links were verified against their GitHub READMEs. The photography gallery uses nine user-supplied images, grouped into Portraits, Interiors, and Details. Their locations and years remain blank until confirmed. The public files are auto-oriented, metadata-stripped WebP exports; the original photographs remain in Downloads outside this project. Unprovided live-demo links remain editable.
