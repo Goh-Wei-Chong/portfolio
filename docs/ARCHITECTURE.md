@@ -77,6 +77,8 @@ Images without a real source remain placeholders. They should not be treated as 
 
 The home page and photography page share navigation, typography, and contact styling. Component classes provide local variations, while responsive rules adapt grids and spacing to narrower screens. Keep reduced-motion behavior and visible focus treatment intact when adjusting animation or transitions.
 
+`src/icons.js` provides `icon(name, className = '')` for shared inline SVG symbols, including arrows, asterisks, and controls. SVG geometry keeps their appearance consistent across browsers and platforms; `currentColor` follows the surrounding theme. These decorative icons are hidden from assistive technology and cannot take focus, so buttons and links retain their own accessible names.
+
 The home page portrait's hover effect is defined by `.hero-portrait:hover .portrait-frame` and `@keyframes portrait-shake` in `src/styles.css`. Its media query requires hover support, a fine pointer, and `prefers-reduced-motion: no-preference`.
 
 `public/theme-init.js` reads a saved `light` or `dark` value from local storage under `gwc-theme`, falling back to the system color preference. It sets the root `data-theme`, `color-scheme`, and browser `theme-color` before the main module renders. `src/theme.js` renders and manages the header control, follows system changes until a manual choice is made, and persists choices across both pages. Storage changes also synchronize open tabs. Theme behavior runs entirely in the browser; unavailable storage does not prevent the current page's toggle from working.

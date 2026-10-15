@@ -240,6 +240,10 @@ Keep changes small and preview both pages after each visual change. A style used
 
 The page shells and browser metadata are in `index.html` and `photography/index.html`. Update their document titles and description metadata when you change your public headline. If you add a social sharing image, use a real public image and the final public URL in the appropriate metadata.
 
+### SVG icons
+
+Shared decorative icons live in `src/icons.js`. Use `icon(name, className)` when adding an icon, for example `icon('arrow-up-right')`, and edit its SVG paths there to change its shape. Size and space it through the caller's CSS class. Icons inherit `currentColor` and keep a consistent appearance across browsers and platforms, including iPhone. Keep their `aria-hidden="true"` and `focusable="false"` attributes; give interactive controls visible text or an accessible label.
+
 ### Light and dark themes
 
 The header toggle switches both pages between light and dark themes. Before a choice is saved, the site follows the browser's system color preference. A manual choice is stored under the local storage key `gwc-theme` and reused when navigating or returning to the site.
