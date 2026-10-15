@@ -154,6 +154,18 @@ collection(photos, 'photos', (photo, label) => {
   string(photo.location, `${label}.location`, { empty: true });
   string(photo.year, `${label}.year`, { empty: true });
   image(photo.src, photo.alt, `${label}.src`, `${label}.alt`);
+  if (photo.thumbnail !== undefined) {
+    asset(photo.thumbnail, `${label}.thumbnail`);
+    if (photo.thumbnail && !photo.src) fail(`${label}.thumbnail`, 'requires a full image in src.');
+  }
+  for (const dimension of ['width', 'height']) {
+    if (photo[dimension] !== undefined && (!Number.isInteger(photo[dimension]) || photo[dimension] <= 0)) {
+      fail(`${label}.${dimension}`, 'must be a positive integer when supplied.');
+    }
+  }
+  if ((photo.width === undefined) !== (photo.height === undefined)) {
+    fail(label, 'supply both width and height, or omit both.');
+  }
   if (!['portrait', 'landscape'].includes(photo.orientation)) {
     fail(`${label}.orientation`, 'must be "portrait" or "landscape".');
   }
