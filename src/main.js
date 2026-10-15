@@ -5,8 +5,6 @@ import './footer.css';
 import { footerMarkup, initFooter } from './footer.js';
 import { profile, projects, experience, education, skills, photos } from './content.js';
 import { icon } from './icons.js';
-import './cameos.css';
-import { initCameos } from './cameos.js';
 
 const base = import.meta.env.BASE_URL;
 const asset = (path) => `${base}${path}`;
@@ -168,6 +166,3 @@ if (isPhotography) {
   document.querySelector('#photo-next').addEventListener('click', () => step(1));
   dialog.addEventListener('keydown', (event) => { if (event.key === 'ArrowLeft') { event.preventDefault(); step(-1); } if (event.key === 'ArrowRight') { event.preventDefault(); step(1); } });
 }
-
-// Register after gallery filters so cameo placement follows the visible photographs.
-initCameos({ isPhotography, assetUrl: asset });

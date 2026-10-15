@@ -66,7 +66,6 @@ The shared JavaScript manages the following browser interactions:
 - A shared light/dark theme toggle with a saved browser preference.
 - An illustrated shared contact footer with a back-to-top action and Shisa messages for hover, focus, and tap interaction.
 - A CSS portrait wobble for fine-pointer hover when reduced motion is not requested.
-- Decorative scroll cameos placed around section whitespace and reserved gallery slots.
 
 Keyboard access, visible focus states, and the ability to close overlays are part of the interaction design. When changing an overlay, verify focus behavior and keyboard controls as well as pointer interaction. When changing gallery filtering, confirm that the visible photo order and lightbox navigation remain consistent.
 
@@ -81,10 +80,6 @@ The home page and photography page share navigation, typography, and contact sty
 `src/icons.js` provides `icon(name, className = '')` for shared inline SVG symbols, including arrows, asterisks, and controls. SVG geometry keeps their appearance consistent across browsers and platforms; `currentColor` follows the surrounding theme. These decorative icons are hidden from assistive technology and cannot take focus, so buttons and links retain their own accessible names.
 
 The home page portrait's hover effect is defined by `.hero-portrait:hover .portrait-frame` and `@keyframes portrait-shake` in `src/styles.css`. Its media query requires hover support, a fine pointer, and `prefers-reduced-motion: no-preference`.
-
-`src/cameos.js` exports `initCameos({ isPhotography, assetUrl })`, called at the end of `src/main.js`. A character map supplies asset paths and framing names; page-specific placement tuples choose the anchor selector, character group, entry side, and spacing. `src/cameos.css` controls the clipped stages and 3.8-second peek animations.
-
-An `IntersectionObserver` arms after 60 pixels of scrolling and runs each anchor once per page visit. One cameo can be active at a time, with no offscreen queue. On phones, cameos occupy section whitespace or reserved gallery space; the gallery slot is inserted after six or twelve visible photos and recalculated after filtering. That gallery slot hides when six or fewer photos are visible. Cameos are decorative, ignore pointer events, hide during dialogs and reduced motion, and rearm their observer checks on dialog close and visibility changes.
 
 `public/theme-init.js` reads a saved `light` or `dark` value from local storage under `gwc-theme`, falling back to the system color preference. It sets the root `data-theme`, `color-scheme`, and browser `theme-color` before the main module renders. `src/theme.js` renders and manages the header control, follows system changes until a manual choice is made, and persists choices across both pages. Storage changes also synchronize open tabs. Theme behavior runs entirely in the browser; unavailable storage does not prevent the current page's toggle from working.
 

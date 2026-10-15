@@ -265,14 +265,6 @@ Review both themes after palette edits, including project details, the photograp
 
 The home page portrait wobbles on hover. In `src/styles.css`, edit `.hero-portrait:hover .portrait-frame` for the animation timing and `@keyframes portrait-shake` for its movement. The effect is enabled only for a fine pointer that supports hover and when `prefers-reduced-motion` is `no-preference`. Preserve those media-query guards when changing the animation.
 
-### Scroll cameos
-
-Edit `src/cameos.js` to change the characters and where they appear. The `characters` map groups image entries with public-relative `src` paths and a `name` used by `.cameo-art--name` styling. The page-specific `placements` lists use `[selector, character, side, spacing]`: a section selector, a key from `characters`, `left` or `right`, and `''`, `spaced`, or `gallery` spacing. To add a character, add its image entry, any required framing rule in `src/cameos.css`, and a placement targeting an existing section.
-
-Each anchor plays once per page visit for 3.8 seconds, after scrolling at least 60 pixels. Only one cameo runs at a time; offscreen anchors are not queued. Edit the peek keyframes and animation duration in `src/cameos.css` to adjust movement. Keep cameos in existing section whitespace or reserved gallery slots. The gallery slot appears after six or twelve visible photographs, hides when six or fewer are visible, and follows category filtering.
-
-Cameos are decorative, hidden from assistive technology, and use `pointer-events: none`. Preserve those settings and the reduced-motion/modal guards. Observer checks resume after a dialog closes or page visibility changes.
-
 ### Illustrated contact footer
 
 Both pages end with an illustrated “last stop” scene and a **Say hello** contact area. The footer keeps the email link, copy-email control, GitHub, LinkedIn, photography link, and a back-to-top action. Contact details still come from `profile` in `src/content.js`.
@@ -291,7 +283,7 @@ The credit line in `footerMarkup()` is: “Made with curiosity, a camera, and ti
 
 ## Change site behavior
 
-`src/main.js` renders the pages from the data and manages interactions, including navigation, project details, gallery filters, and the lightbox. Theme behavior is in `src/theme.js`; the shared contact scene and mascot behavior are in `src/footer.js`; scroll cameos are in `src/cameos.js`. Change these files when you need new behavior or a new content structure.
+`src/main.js` renders the pages from the data and manages interactions, including navigation, project details, gallery filters, and the lightbox. Theme behavior is in `src/theme.js`; the shared contact scene and mascot behavior are in `src/footer.js`. Change these files when you need new behavior or a new content structure.
 
 If you rename content keys or introduce required fields, update both the rendering code and `scripts/check-content.mjs`. Keep the HTML entry points and Vite build configuration in sync if you add a page.
 
