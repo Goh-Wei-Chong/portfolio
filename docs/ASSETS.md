@@ -1,27 +1,36 @@
-# Footer artwork
+# Footer artwork and dialogue
 
-The footer combines an original, editable station drawing with a newly generated character illustration. The visual direction came from the illustrated ending on [Elaine Yu’s portfolio](https://www.elaineyu.design/); no artwork or source code was copied from that site.
+The footer combines an original, editable station drawing with official Shisa character artwork. Its visual direction came from the illustrated ending on [Elaine Yu's portfolio](https://www.elaineyu.design/). The scene uses this site's olive, cream, and terracotta palette.
+
+## Artwork
 
 | Asset | Source and editing |
 | --- | --- |
-| `public/images/footer/last-stop.svg` | Original 1000 × 390 SVG, drawn for this project. Edit its paths, sign, and colors directly. It has a transparent background and no external dependencies. |
-| `public/images/footer/shisa.webp` | New Shisa illustration created using the built-in image generation tool. Transparent 768 × 768 WebP, 76,770 bytes. Alpha is preserved; no photo metadata is included. |
+| `public/images/footer/last-stop.svg` | Original 1000 × 390 station drawing made for this project. Edit its paths, sign, and stroke colors directly. It has a transparent background and no external dependencies. |
+| `public/images/footer/shisa-official.png` | Unmodified PNG from the [official anime character page](https://www.anime-chiikawa.jp/chara.html), downloaded from its [character sprite image](https://www.anime-chiikawa.jp/images/characters/img_charapage.png). Dimensions: 3766 × 463 pixels; size: 209,921 bytes. |
 
-Shisa is a character from Chiikawa. Appearance was checked against the [official character page](https://www.chiikawaofficial.com/characters/) and [official Shisa collection](https://chiikawamarket.jp/collections/shisa). The illustration is a new generated interpretation, not an official asset. The original generated PNG is kept outside the project; the website uses the WebP above.
+Shisa artwork credit: **©ナガノ/ちいかわ製作委員会**. The footer retains this credit and links to the official character page.
 
-## Generation prompt
+The complete official sprite is stored unchanged. `.shisa-art` in `src/footer.css` displays the Shisa region at source coordinates `x: 2636, y: 0, width: 400, height: 355` using a clipped CSS window. The image is scaled to `941.5%` width and offset to `left: -659%`. Update the window and offsets together if the sprite changes.
 
-Tool: built-in image generation, with `transparent_background: true`.
+The stored file's SHA-256 is:
 
 ```text
-Use case: illustration-story.
-Asset type: transparent character illustration for an illustrated personal portfolio footer.
-Primary request: Draw Shisa (シーサー) from Chiikawa, recognizable as the official small Okinawan guardian lion character, in a new original front-facing sitting pose. One character only, entire body visible, friendly and cheerful.
-Subject details: very round warm ivory face and tiny ivory body, orange curled/fluted lion mane framing the face, small orange rounded ears and orange curled brow shapes, tiny dark expressive eyes, tiny smiling mouth, soft pink cheeks, short little paws and feet. Preserve Shisa's distinctive Chiikawa character design and childlike proportions; no shirt or other clothing.
-Style/medium: delicate hand-drawn warm cream and muted orange outlines, soft flat colour fills, simple charming 2D storybook illustration. Clear compact silhouette with minimal detail, suitable for display at roughly 160px tall. Warm ivory and apricot orange with tiny dark facial details, gently textured linework but crisp edges. Designed to sit within a dark ink-blue and cream line-drawn train-station footer scene.
-Composition/framing: a single centered sitting character on a square transparent canvas with a small even empty margin, front view, full ears/mane/paws visible, no cropping.
-Scene/backdrop: genuinely transparent alpha background.
-Constraints: no background, no ground, no floor, no shadows, no glow, no text, no lettering, no logo, no watermark, no border, no frame, no props, no other characters. Do not draw a generic realistic shisa statue; this is the cute cream-and-orange Shisa from Chiikawa. Do not render a checkerboard pattern; pixels around the character must be transparent.
+856b8b0e181c4a1c2a826816ed0b19eaad271fb580e76c5b21273885ec0ff07e
 ```
 
-The illustration was visually checked on an ink-blue background before integration. Replacing it only requires updating this file at the same path with a transparent image of the same proportions. Position and speech-bubble styling live in `src/footer.css`; messages live in `src/footer.js`.
+## Dialogue
+
+The `shisaMessages` array in `src/footer.js` contains three short Japanese dialogue excerpts from Nagano's original Shisa comics. The first two entries come from [this original comic post](https://x.com/ngnchiikawa/status/1429862846934896649); the third comes from [this follow-up comic post](https://x.com/ngnchiikawa/status/1430926333165531138). The Japanese speech was checked against the original comic images.
+
+Each entry preserves its provenance:
+
+| Field | Meaning |
+| --- | --- |
+| `text` | Verified Japanese dialogue excerpt from the original comic |
+| `translation` | English translation prepared for this portfolio |
+| `source` | Complete URL of the original Nagano comic post |
+
+Keep source links with the quotes and verify the original Japanese speech before adding a line. The bubble and its screen-reader announcement mark Japanese text with `lang="ja"` and the English translation with `lang="en"`.
+
+Dialogue behavior and footer markup live in `src/footer.js`; sprite framing, speech-bubble styling, and theme colors live in `src/footer.css`.

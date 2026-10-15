@@ -261,13 +261,17 @@ Review both themes after palette edits, including project details, the photograp
 
 Both pages end with an illustrated “last stop” scene and a **Say hello** contact area. The footer keeps the email link, copy-email control, GitHub, LinkedIn, photography link, and a back-to-top action. Contact details still come from `profile` in `src/content.js`.
 
-Edit `footerMarkup()` in `src/footer.js` for the footer markup, and the exported `shisaMessages` array for Shisa's dialogue. Keep at least one message in the array. The messages are playful fictional mascot copy; keep them separate from factual statements about your experience or availability.
+Edit `footerMarkup()` in `src/footer.js` for the footer markup, and the exported `shisaMessages` array for Shisa's dialogue. Keep at least one message object in the array. Each object contains `text` for the verified Japanese line, `translation` for its English translation, and `source` for the complete original comic post URL. Preserve the source with each line when reordering or adding messages. The English wording is translated for this portfolio. See [the dialogue sources](ASSETS.md#dialogue) before changing the Japanese text.
 
 Hovering, focusing, or clicking/tapping the mascot advances through the messages; keyboard users can also activate its button with Enter or Space. The bubble stays open while the pointer is over the mascot or speech bubble, or while the button has keyboard focus. It dismisses shortly after the pointer leaves without keyboard focus, or when focus leaves while the pointer is outside. Escape dismisses it from anywhere on the page. Tap interactions without persistent hover or keyboard focus dismiss after six seconds. `initFooter()` manages these interactions.
 
-Edit `src/footer.css` for the scene layout, speech bubble, illustration placement, and responsive rules. Its `.last-stop-footer` variables—`--footer-bg`, `--footer-end`, `--footer-ink`, `--footer-muted`, `--footer-line`, and `--footer-accent`—control the footer palette, with dark overrides under `:root[data-theme="dark"] .last-stop-footer`. The light theme uses deep blue with cream line art; dark mode uses an inkier blue. Keep both palettes readable when changing them.
+Edit `src/footer.css` for the scene layout, speech bubble, illustration placement, and responsive rules. Its `.last-stop-footer` variables—`--footer-bg`, `--footer-end`, `--footer-ink`, `--footer-muted`, `--footer-line`, and `--footer-accent`—control the footer palette, with dark overrides under `:root[data-theme="dark"] .last-stop-footer`. The footer uses the site's olive, cream, and terracotta palette; dark mode reuses the shared dark theme values. Keep both palettes readable when changing them.
 
-The scene illustration is `public/images/footer/last-stop.svg`; its SVG stroke colors control the cream line art. The transparent mascot is `public/images/footer/shisa.webp`. Edit or replace those assets to change the artwork. Keep purely decorative scene details out of the accessibility tree, retain the mascot's keyboard interaction and separate screen-reader announcement region, and check the contact controls and speech bubble at phone widths. See [the artwork notes](ASSETS.md) for provenance and the generation prompt.
+The scene illustration is `public/images/footer/last-stop.svg`; its SVG stroke colors control the cream line art. `public/images/footer/shisa-official.png` is an unmodified official character sprite. `.shisa-art` in `src/footer.css` selects the visible Shisa region; update that CSS window if you replace the sprite. Retain the official artwork credit in the footer. See [the artwork notes](ASSETS.md) for the source, attribution, and sprite dimensions.
+
+Keep purely decorative scene details out of the accessibility tree, retain the mascot's keyboard interaction, language tags, and separate screen-reader announcement region, and check the contact controls and speech bubble at phone widths.
+
+The credit line in `footerMarkup()` is: “Made with curiosity, a camera, and time that should've been used studying :p”. Edit the `.footer-colophon` text there to change it.
 
 ## Change site behavior
 
