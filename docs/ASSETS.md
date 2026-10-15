@@ -1,4 +1,10 @@
-# Footer artwork and messages
+# Website artwork and images
+
+## Project screenshots
+
+`public/images/projects/rotomdex.webp` is the user-provided Rotomdex homepage screenshot from 15 October 2026. The complete 3456 × 2157 PNG was resized to 2000 × 1249 and encoded as WebP at quality 88, with metadata omitted (87,364 bytes). It is used on the Pokémon website project card; replace the file and update its image description in `src/content.js` when the project changes again.
+
+## Footer artwork and messages
 
 The footer combines an original, editable station drawing with official Shisa character artwork. Its visual direction came from the illustrated ending on [Elaine Yu's portfolio](https://www.elaineyu.design/). The scene uses this site's olive, cream, and terracotta palette.
 

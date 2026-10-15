@@ -31,11 +31,17 @@ export const projects = [
     image: null, imageAlt: 'Screenshot of the competition judging platform', sourceUrl: 'https://github.com/Goh-Wei-Chong/Competitor-Judging-Platform', liveUrl: null,
   },
   {
-    id: 'pokemon-website', title: 'A playful way to explore', year: '2020',
-    category: 'Interactive web', description: 'A Pokémon-themed website bringing together search, public API data, and interactive games.',
-    tools: ['HTML', 'CSS', 'JavaScript', 'Public APIs'], role: 'Pair assignment',
-    details: ['Created a Pokémon-themed website as a final pair assignment.', 'Implemented search functionality and worked with public APIs.', 'Added interactive games with HTML, CSS, and JavaScript.'],
-    image: null, imageAlt: 'Screenshot of the Pokémon website', sourceUrl: 'https://github.com/Goh-Wei-Chong/Goh-Wei-Chong.github.io-Pokemon-Website', liveUrl: null,
+    id: 'pokemon-website', title: 'Rotom Dex', year: 'Updated 2026',
+    category: 'Interactive web', description: 'A Rotom-inspired Pokédex for 1,025 Pokémon, with a stat comparison lab and two mini-games.',
+    tools: ['JavaScript', 'HTML / CSS', 'PokéAPI data'], role: 'Personal redesign · originally a pair assignment',
+    details: [
+      'Reimagined an original pair assignment as a responsive Rotom Dex interface using HTML, CSS, and native JavaScript modules.',
+      'Explore all 1,025 National Dex species through Generation IX with search by name or number, generation and type filters, sorting, and grid/list views.',
+      'Compare two Pokémon with independent levels, natures, IVs, and EVs, calculated stat differences, and a shared-scale radar chart.',
+      'Play Who’s That Pokémon and Pokémon Blitz, with generation filters through Generation IX.',
+      'Uses a local PokéAPI-derived catalog for search, filtering, comparisons, and game answers, without a live API dependency.',
+    ],
+    image: 'images/projects/rotomdex.webp', imageAlt: 'Rotom Dex homepage with a Rotom mascot, Pokémon search and filters, and Paldea Pokémon cards', sourceUrl: 'https://github.com/Goh-Wei-Chong/Goh-Wei-Chong.github.io-Pokemon-Website', liveUrl: 'https://goh-wei-chong.github.io/Goh-Wei-Chong.github.io-Pokemon-Website/',
   },
 ];
 
