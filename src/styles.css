@@ -16,6 +16,13 @@ dialog{border:0;padding:0;max-height:90dvh;background:var(--paper);color:var(--i
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 /* Published photographs keep their original framing, including on phones. */
+.hero-portrait{position:relative;width:100%;max-width:290px;justify-self:center}
+.hero-portrait .portrait-frame{max-width:none}
+.portrait-arrow{position:absolute;left:-134px;top:16px;width:138px;height:auto;color:var(--accent);pointer-events:none}
+@media(max-width:1100px){.hero-portrait{max-width:235px}.portrait-arrow{left:-116px;width:120px;top:10px}}
+@media(max-width:800px){.hero-portrait{max-width:220px;justify-self:end}.portrait-arrow{left:-106px;width:110px;top:4px}}
+@media(max-width:540px){.hero-portrait{max-width:165px}.portrait-arrow{left:-79px;top:-15px;width:83px}}
+@media(max-width:540px){.project-grid{grid-template-columns:minmax(0,1fr)}}
 .photo-frame.has-image{aspect-ratio:var(--photo-ratio)}
 .photo-frame.has-image img{object-fit:contain}
 .photo-series{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-block:0 27px}

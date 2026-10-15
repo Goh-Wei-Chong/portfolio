@@ -1,4 +1,6 @@
 import './styles.css';
+import './theme.css';
+import { themeToggleMarkup, initTheme } from './theme.js';
 import { profile, projects, experience, education, skills, photos } from './content.js';
 
 const base = import.meta.env.BASE_URL;
@@ -14,15 +16,20 @@ function header() {
   return `<header class="site-header wrap">
     <a class="brand" href="${home()}" aria-label="Goh Wei Chong, home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>GWC<span class="brand-period">.</span></span></a>
     <nav aria-label="Main navigation"><a href="${home('#about')}">About</a><a href="${home('#work')}">Work</a><a href="${photoPage}" ${isPhotography ? 'aria-current="page"' : ''}>Photography</a><a href="${home('#contact')}">Let’s talk <span aria-hidden="true">↗</span></a></nav>
-    <div class="local-time"><span class="status-dot"></span> ${esc(profile.location)} <time id="sg-time"></time></div>
+    <div class="header-tools">${themeToggleMarkup()}<div class="local-time"><span class="status-dot"></span> ${esc(profile.location)} <time id="sg-time"></time></div></div>
   </header>`;
 }
 
 function portrait() {
-  return `<div class="portrait-frame">${profile.portrait.src
+  return `<div class="hero-portrait">${portraitArrow()}<div class="portrait-frame">${profile.portrait.src
     ? `<img src="${asset(profile.portrait.src)}" alt="${esc(profile.portrait.alt)}" width="960" height="1280" fetchpriority="high" decoding="async" />`
     : `<div class="portrait-placeholder" role="img" aria-label="A space for Wei Chong’s portrait"><span class="corner corner-tl"></span><span class="corner corner-br"></span><div class="portrait-monogram">w<span>c.</span></div><span class="placeholder-caption">YOUR PORTRAIT HERE <span>↗</span></span></div>`}
-    <span class="portrait-note"><span class="status-dot"></span>${esc(profile.availability)}</span></div>`;
+    <span class="portrait-note"><span class="status-dot"></span>${esc(profile.availability)}</span></div></div>`;
+}
+
+// An original, decorative line drawing. Its tip sits just outside the portrait.
+function portraitArrow() {
+  return `<svg class="portrait-arrow" viewBox="0 0 180 160" fill="none" aria-hidden="true" focusable="false"><path d="M18 14C69 8 132 38 112 85C98 118 45 119 44 90C43 61 100 51 129 78C147 95 146 116 171 129M155 114L171 129L150 134" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 }
 
 function projectArtwork(project, index) {
@@ -73,6 +80,7 @@ function photography() {
 }
 
 document.querySelector('#app').innerHTML = isPhotography ? photography() : portfolio();
+initTheme();
 
 function updateClock() {
   const clock = document.querySelector('#sg-time');
