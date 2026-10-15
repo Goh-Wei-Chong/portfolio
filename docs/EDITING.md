@@ -53,7 +53,7 @@ Find `profile` in `src/content.js`. Edit the existing fields:
 | `portrait.alt` | Description of the portrait |
 | `resume` | Public resume file path, or `null` to hide the download link |
 
-The oversized hero name, `GWC` brand, footer signature, and some editorial copy are authored directly in `src/main.js` to preserve their specific layout. If you change your displayed name or those sentences, update the matching strings there as well as the profile fields and HTML metadata.
+The oversized hero name, `GWC` brand, and some editorial copy are authored directly in `src/main.js` to preserve their specific layout. If you change your displayed name or those sentences, update the matching strings there as well as the profile fields and HTML metadata.
 
 For example, replace only the portrait fields inside the existing profile:
 
@@ -67,6 +67,8 @@ portrait: {
 Keep residential addresses, referee contact details, and any telephone number you do not want public out of the site content. Every file under `public/` and all client-side content can be downloaded by visitors.
 
 ## Add or replace images
+
+Create the `portrait`, `projects`, and `photography` subfolders under `public/images/` if they are absent after cloning. Git does not store empty directories.
 
 1. Prepare an image you own or have permission to publish.
 2. Give it a readable filename using lowercase letters and hyphens.
@@ -253,7 +255,7 @@ For a manual production build on macOS or Linux:
 
 ```bash
 BASE_PATH=/portfolio/ npm run build
-npm run preview
+BASE_PATH=/portfolio/ npm run preview
 ```
 
 For PowerShell:
