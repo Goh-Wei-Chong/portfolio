@@ -1,14 +1,11 @@
 const esc = (value = '') => String(value).replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 
-// A little welcome-desk dialogue. Add or reorder messages here.
+// Shisa's spoken lines from Nagano's original comic; English is our translation.
+// Keep source links with each quote when adding or reordering messages.
 export const shisaMessages = [
-  'Hello, hello! You made it to the last stop.',
-  'Take a little breather. The tabs can wait.',
-  'A good day for a little curiosity, isn’t it?',
-  'One more photo before you go?',
-  'Got an idea? Wei Chong’s inbox is just above.',
-  'I’m on welcome duty. Very important work.',
-  'Thanks for stopping by. Come say hello again!',
+  { text: 'どうぞッ', translation: 'Here you go!', source: 'https://x.com/ngnchiikawa/status/1429862846934896649' },
+  { text: 'さたぱんびん', translation: 'Okinawan doughnuts', source: 'https://x.com/ngnchiikawa/status/1429862846934896649' },
+  { text: 'お師匠ッ', translation: 'Master!', source: 'https://x.com/ngnchiikawa/status/1430926333165531138' },
 ];
 
 const icons = {
@@ -35,14 +32,14 @@ export function footerMarkup({ profile, homeUrl, aboutUrl, photoUrl, assetUrl })
           <div class="shisa-greeting">
             <p class="shisa-speech" id="shisa-speech" aria-hidden="true"></p>
             <p class="sr-only" data-shisa-announcement role="status" aria-live="polite" aria-atomic="true"></p>
-            <button type="button" class="shisa-button" aria-label="Say hello to Shisa" aria-describedby="shisa-hint" aria-controls="shisa-speech" aria-expanded="false"><img src="${assetUrl('images/footer/shisa.webp')}" alt="" width="512" height="512" loading="lazy" decoding="async" /></button>
+            <button type="button" class="shisa-button" aria-label="Say hello to Shisa" aria-describedby="shisa-hint" aria-controls="shisa-speech" aria-expanded="false"><span class="shisa-art" aria-hidden="true"><img src="${assetUrl('images/footer/shisa-official.png')}" alt="" width="3766" height="463" loading="lazy" decoding="async" /></span></button>
           </div>
           <span class="shisa-hint" id="shisa-hint">SHISA’S HERE. HOVER OR TAP TO SAY HELLO.</span>
         </div>
         <div class="footer-identity"><a href="${esc(homeUrl)}" class="end-signature">${profile.portrait.src ? `<img src="${assetUrl(profile.portrait.src)}" alt="" width="48" height="48" loading="lazy" />` : '<span class="end-monogram" aria-hidden="true">w.</span>'}<span>${esc(profile.name)}</span></a><span class="end-location">A LITTLE CURIOSITY, FROM ${esc(profile.location).toUpperCase()}.</span></div>
-        <p class="footer-colophon">Made with curiosity, a camera, and a few too many open tabs.</p>
+        <p class="footer-colophon">Made with curiosity, a camera, and time that should've been used studying :p</p>
         <div class="end-socials">${outgoing(profile.linkedin, 'LinkedIn', 'linkedin')}<a href="mailto:${esc(profile.email)}">${icon('mail')}<span>Email</span></a>${outgoing(profile.github, 'GitHub', 'github')}<a href="${esc(photoUrl)}">${icon('camera')}<span>Photography</span></a></div>
-        <div class="end-meta"><span>© ${new Date().getFullYear()} ${esc(profile.name)}</span><span>THANKS FOR STOPPING BY.</span></div>
+        <div class="end-meta"><span>© ${new Date().getFullYear()} ${esc(profile.name)}</span><a class="shisa-credit" href="https://www.anime-chiikawa.jp/chara.html" target="_blank" rel="noopener noreferrer">Shisa ©ナガノ/ちいかわ製作委員会<span class="sr-only"> (opens in a new tab)</span></a><span>THANKS FOR STOPPING BY.</span></div>
       </div>
     </div>
   </footer>`;
@@ -67,8 +64,9 @@ export function initFooter() {
     if (greeting.classList.contains('is-chatty') && performance.now() - lastSpoke < 350) return;
     lastSpoke = performance.now();
     clearTimeout(dismissTimer);
-    speech.textContent = shisaMessages[nextMessage++ % shisaMessages.length];
-    announcement.textContent = speech.textContent;
+    const message = shisaMessages[nextMessage++ % shisaMessages.length];
+    speech.innerHTML = `<span class="shisa-quote" lang="ja">${esc(message.text)}</span><span class="shisa-translation" lang="en">${esc(message.translation)}</span>`;
+    announcement.innerHTML = `<span lang="ja">${esc(message.text)}</span> <span lang="en">${esc(message.translation)}</span>`;
     greeting.classList.add('is-chatty');
     button.setAttribute('aria-expanded', 'true');
     if (!pointerInside && !button.matches(':focus-visible')) dismissTimer = setTimeout(hide, 6000);

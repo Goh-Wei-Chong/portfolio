@@ -1,21 +1,22 @@
 /* A little destination at the end of both pages. */
 .last-stop-footer {
-  --footer-bg: #233e68;
-  --footer-end: #1c345b;
-  --footer-ink: #f3eedc;
-  --footer-muted: #c0cbe0;
-  --footer-line: #667a9c;
-  --footer-accent: #efb291;
+  --footer-bg: #292e25;
+  --footer-end: #23291f;
+  --footer-ink: #f5f4ef;
+  --footer-muted: #bdc4b1;
+  --footer-line: #626f55;
+  --footer-accent: #e0a087;
   background: var(--footer-bg);
   color: var(--footer-ink);
   padding: 0;
 }
 :root[data-theme="dark"] .last-stop-footer {
-  --footer-bg: #182638;
-  --footer-end: #142131;
-  --footer-ink: #ede9dc;
-  --footer-muted: #b5bfd1;
-  --footer-line: #465b76;
+  --footer-bg: var(--paper);
+  --footer-end: #11170f;
+  --footer-ink: var(--ink);
+  --footer-muted: var(--muted);
+  --footer-line: var(--line);
+  --footer-accent: var(--accent);
 }
 .hello-wrap { padding-block: 58px 54px; }
 .hello-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; color: var(--footer-muted); }
@@ -41,9 +42,14 @@
 .shisa-greeting { position: absolute; left: 62.5%; bottom: calc(17% + 28px); width: 12.5%; transform: translateX(-50%); z-index: 1; }
 .shisa-button { display: block; width: 100%; min-width: 44px; min-height: 44px; padding: 0; background: transparent; border-radius: 20%; transition: transform .2s; }
 .shisa-button img { width: 100%; height: auto; object-fit: contain; }
+/* Show the official sprite's Shisa region without altering the source PNG. */
+.shisa-art { display: block; position: relative; width: 100%; aspect-ratio: 400 / 355; overflow: hidden; }
+.shisa-art img { position: absolute; top: 0; left: -659%; width: 941.5%; max-width: none; height: auto; }
 .shisa-button:hover, .shisa-button:focus-visible { transform: translateY(-3px) rotate(-3deg); }
-.shisa-speech { position: absolute; bottom: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(5px); width: clamp(180px, 22vw, 240px); padding: 15px 18px; border-radius: 16px 16px 16px 4px; color: #233047; background: #f3eedc; font-size: 13px; line-height: 1.5; text-align: center; box-shadow: 0 5px 0 #09111e33; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .15s, transform .15s; }
-.shisa-speech::after { content: ''; position: absolute; bottom: -8px; left: calc(50% - 8px); border-inline: 8px solid transparent; border-top: 9px solid #f3eedc; }
+.shisa-speech { position: absolute; bottom: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(5px); width: clamp(180px, 22vw, 240px); padding: 15px 18px; border-radius: 16px 16px 16px 4px; color: #252820; background: var(--footer-ink); font-size: 13px; line-height: 1.5; text-align: center; box-shadow: 0 5px 0 #080c0733; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .15s, transform .15s; }
+.shisa-speech::after { content: ''; position: absolute; bottom: -8px; left: calc(50% - 8px); border-inline: 8px solid transparent; border-top: 9px solid var(--footer-ink); }
+.shisa-quote { display: block; font-size: 18px; font-weight: 500; letter-spacing: .02em; }
+.shisa-translation { display: block; margin-top: 6px; color: #5e6657; font-size: 11px; line-height: 1.5; }
 .is-chatty .shisa-speech { visibility: visible; opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
 .shisa-hint { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); font-family: monospace; color: var(--footer-muted); font-size: 9px; letter-spacing: .07em; white-space: nowrap; }
 .footer-identity { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
@@ -56,6 +62,7 @@
 .end-socials a { display: inline-flex; align-items: center; gap: 9px; color: var(--footer-muted); font-size: 11px; min-height: 32px; }
 .end-socials svg { width: 20px; height: 20px; }
 .end-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; color: var(--footer-muted); font-family: monospace; font-size: 9px; letter-spacing: .09em; }
+.shisa-credit:hover { color: var(--footer-accent); }
 .last-stop-footer a:focus-visible, .last-stop-footer button:focus-visible { outline-color: var(--footer-accent); }
 
 @media (max-width: 800px) {
@@ -85,6 +92,8 @@
   .footer-scene { width: calc(100% + 16px); margin: 34px -8px 32px; padding-bottom: 30px; }
   .shisa-greeting { bottom: calc(17% + 30px); }
   .shisa-speech { width: 182px; padding: 12px 14px; font-size: 11px; bottom: calc(100% + 8px); }
+  .shisa-quote { font-size: 16px; }
+  .shisa-translation { font-size: 10px; margin-top: 5px; }
   .shisa-hint { font-size: 7px; letter-spacing: .015em; }
   .footer-identity { display: block; }
   .end-signature { font-size: 25px; gap: 11px; }
