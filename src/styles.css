@@ -22,23 +22,22 @@ dialog{border:0;padding:0;max-height:90dvh;background:var(--paper);color:var(--i
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 /* Published photographs keep their original framing, including on phones. */
-.hero-portrait{position:relative;width:100%;max-width:290px;justify-self:center}
-.hero-portrait .portrait-frame{max-width:none;transform-origin:50% 0}
-/* A fixed tack lets the photograph wobble beneath its mounting point. */
+.hero-portrait{--portrait-pivot-y:12px;position:relative;width:100%;max-width:290px;justify-self:center}
+.hero-portrait .portrait-frame{max-width:none;transform-origin:50% var(--portrait-pivot-y)}
+/* Rotate only around the tack's point; the pin and pivot never slide. */
 .portrait-pin{position:absolute;top:-13px;left:50%;width:28px;height:32px;transform:translateX(-50%) rotate(-14deg);z-index:2;pointer-events:none;filter:drop-shadow(2px 3px 2px #151a1440)}
 .portrait-pin::before{content:'';position:absolute;top:0;left:2px;width:21px;height:19px;border:1px solid #8c3e2d;border-radius:50%;background:radial-gradient(ellipse at 32% 24%,#f8d1b2 0 9%,#e59170 22%,#c56348 58%,#93432f 100%);box-shadow:inset -2px -3px 1px #7c32274d,0 2px 0 #813e2f;z-index:1}
 .portrait-pin::after{content:'';position:absolute;top:15px;left:12px;width:5px;height:13px;border-radius:1px 1px 50% 50%;transform:rotate(-22deg);background:linear-gradient(90deg,#677269,#f4efe3 45%,#818c82);box-shadow:2px 2px 2px #151a1430}
-@keyframes portrait-shake {
-  0%,100%{transform:translateX(0) rotate(3deg)}
-  20%,60%{transform:translateX(-2px) rotate(1.5deg)}
-  40%,80%{transform:translateX(2px) rotate(4.5deg)}
+@keyframes portrait-sway {
+  0%,100%{transform:rotate(3deg)}
+  50%{transform:rotate(-3deg)}
 }
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
-  .hero-portrait:hover .portrait-frame{animation:portrait-shake .65s ease-in-out infinite}
+  .hero-portrait:hover .portrait-frame{animation:portrait-sway 2.6s ease-in-out infinite}
 }
 @media(max-width:1100px){.hero-portrait{max-width:235px}}
 @media(max-width:800px){.hero-portrait{max-width:220px;justify-self:end}}
-@media(max-width:540px){.hero-portrait{max-width:165px}.portrait-pin{top:-10px;transform:translateX(-50%) rotate(-14deg) scale(.8);transform-origin:50% 0}}
+@media(max-width:540px){.hero-portrait{--portrait-pivot-y:9px;max-width:165px}.portrait-pin{top:-10px;transform:translateX(-50%) rotate(-14deg) scale(.8);transform-origin:50% 0}}
 @media(max-width:540px){.project-grid{grid-template-columns:minmax(0,1fr)}}
 .photo-frame.has-image{aspect-ratio:var(--photo-ratio)}
 .photo-frame.has-image img{object-fit:contain}

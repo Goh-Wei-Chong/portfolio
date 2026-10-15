@@ -65,7 +65,7 @@ The shared JavaScript manages the following browser interactions:
 - A gallery lightbox with caption and navigation controls; empty slots open an explanatory frame view.
 - A shared light/dark theme toggle with a saved browser preference.
 - An illustrated shared contact footer with a back-to-top action and Shisa messages for hover, focus, and tap interaction.
-- A CSS portrait wobble for fine-pointer hover when reduced motion is not requested.
+- A CSS portrait sway around a fixed thumbtack for fine-pointer hover when reduced motion is not requested.
 
 Keyboard access, visible focus states, and the ability to close overlays are part of the interaction design. When changing an overlay, verify focus behavior and keyboard controls as well as pointer interaction. When changing gallery filtering, confirm that the visible photo order and lightbox navigation remain consistent.
 
@@ -79,7 +79,7 @@ The home page and photography page share navigation, typography, and contact sty
 
 `src/icons.js` provides `icon(name, className = '')` for shared inline SVG symbols, including arrows, asterisks, and controls. SVG geometry keeps their appearance consistent across browsers and platforms; `currentColor` follows the surrounding theme. These decorative icons are hidden from assistive technology and cannot take focus, so buttons and links retain their own accessible names.
 
-The home page portrait's hover effect is defined by `.hero-portrait:hover .portrait-frame` and `@keyframes portrait-shake` in `src/styles.css`. Its media query requires hover support, a fine pointer, and `prefers-reduced-motion: no-preference`.
+The home page portrait's hover effect is defined by `.hero-portrait:hover .portrait-frame` and `@keyframes portrait-sway` in `src/styles.css`. It uses rotation without translation around `50% var(--portrait-pivot-y)`, leaving the sibling thumbtack fixed. Its media query requires hover support, a fine pointer, and `prefers-reduced-motion: no-preference`.
 
 `public/theme-init.js` reads a saved `light` or `dark` value from local storage under `gwc-theme`, falling back to the system color preference. It sets the root `data-theme`, `color-scheme`, and browser `theme-color` before the main module renders. `src/theme.js` renders and manages the header control, follows system changes until a manual choice is made, and persists choices across both pages. Storage changes also synchronize open tabs. Theme behavior runs entirely in the browser; unavailable storage does not prevent the current page's toggle from working.
 

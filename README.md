@@ -9,7 +9,7 @@ The site includes:
 - A supplied profile portrait and designed placeholders for project images.
 - Light and dark themes on both pages, with a header toggle and a saved preference.
 - An illustrated “last stop” contact footer with official Shisa artwork and thirteen custom English messages.
-- A subtle portrait wobble on mouse hover, respecting reduced-motion preferences.
+- A portrait that gently sways beneath a fixed thumbtack on mouse hover, respecting reduced-motion preferences.
 - One central content file, responsive layouts, and a GitHub Pages deployment workflow.
 
 ## Run locally

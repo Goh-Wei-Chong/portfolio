@@ -263,7 +263,7 @@ Review both themes after palette edits, including project details, the photograp
 
 ### Portrait hover animation
 
-The home page portrait wobbles on hover. In `src/styles.css`, edit `.hero-portrait:hover .portrait-frame` for the animation timing and `@keyframes portrait-shake` for its movement. The effect is enabled only for a fine pointer that supports hover and when `prefers-reduced-motion` is `no-preference`. Preserve those media-query guards when changing the animation.
+The home page portrait gently sways on hover around the thumbtack's point. In `src/styles.css`, edit `.hero-portrait:hover .portrait-frame` for the animation timing and `@keyframes portrait-sway` for its movement. The frame rotates between 3 and −3 degrees over 2.6 seconds, without sideways translation. `--portrait-pivot-y` places the pivot 12px below the frame's top centre (9px on phones). The effect is enabled only for a fine pointer that supports hover and when `prefers-reduced-motion` is `no-preference`. Preserve those media-query guards when changing the animation.
 
 The terracotta thumbtack is drawn in CSS with `.portrait-pin` and its two pseudo-elements. Its markup is a decorative, screen-reader-hidden sibling of the photo frame in `portrait()` in `src/main.js`. The tack stays fixed while the frame rotates around its top centre. Edit those CSS rules to change its position, size, highlight, or shadow; the phone rule scales it down. No image asset is needed.
 
