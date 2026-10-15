@@ -61,7 +61,7 @@ export const skills = [
 ];
 
 // Curated by colour and scale: portraits, city scenes, and quieter details.
-// The landscape frame provides a visual pause; the soft city lights close the sequence.
+// Green interiors and small details punctuate the warmer city scenes; soft lights close the sequence.
 // src is the large lightbox image; thumbnail is the optional 900px export.
 // Locations and dates are left blank until confirmed by the photographer.
 export const photos = [
@@ -131,29 +131,29 @@ export const photos = [
     "orientation": "portrait"
   },
   {
-    "id": "passing-through",
-    "title": "Passing through",
-    "category": "Street",
-    "location": "",
-    "year": "",
-    "src": "images/photography/dscf0221.webp",
-    "thumbnail": "images/photography/dscf0221-900.webp",
-    "width": 1467,
-    "height": 2200,
-    "alt": "A green bus and a silver car in motion beneath warm lights at night.",
-    "orientation": "portrait"
-  },
-  {
-    "id": "in-the-grooves",
-    "title": "In the grooves",
+    "id": "rose-tinted",
+    "title": "Rose-tinted",
     "category": "Details",
     "location": "",
     "year": "",
-    "src": "images/photography/dscf0302.webp",
-    "thumbnail": "images/photography/dscf0302-900.webp",
+    "src": "images/photography/dscf0127.webp",
+    "thumbnail": "images/photography/dscf0127-900.webp",
     "width": 1467,
     "height": 2200,
-    "alt": "Rows of records beneath a wall of colourful album sleeves and framed magazine covers.",
+    "alt": "A tall cocktail with dried flower petals around the rim, glowing in warm amber light.",
+    "orientation": "portrait"
+  },
+  {
+    "id": "a-moment-of-quiet",
+    "title": "A moment of quiet",
+    "category": "Interiors",
+    "location": "",
+    "year": "",
+    "src": "images/photography/dscf0148.webp",
+    "thumbnail": "images/photography/dscf0148-900.webp",
+    "width": 1467,
+    "height": 2200,
+    "alt": "An empty corridor with pale walls and a green window beneath an illuminated exit sign.",
     "orientation": "portrait"
   },
   {
@@ -170,6 +170,32 @@ export const photos = [
     "orientation": "portrait"
   },
   {
+    "id": "in-the-grooves",
+    "title": "In the grooves",
+    "category": "Details",
+    "location": "",
+    "year": "",
+    "src": "images/photography/dscf0302.webp",
+    "thumbnail": "images/photography/dscf0302-900.webp",
+    "width": 1467,
+    "height": 2200,
+    "alt": "Rows of records beneath a wall of colourful album sleeves and framed magazine covers.",
+    "orientation": "portrait"
+  },
+  {
+    "id": "small-company",
+    "title": "Small company",
+    "category": "Details",
+    "location": "",
+    "year": "",
+    "src": "images/photography/dscf0094.webp",
+    "thumbnail": "images/photography/dscf0094-900.webp",
+    "width": 1467,
+    "height": 2200,
+    "alt": "A blue and white plush keychain resting against a pale bag and blue paisley fabric.",
+    "orientation": "portrait"
+  },
+  {
     "id": "stories-in-colour",
     "title": "Stories in colour",
     "category": "Details",
@@ -181,19 +207,6 @@ export const photos = [
     "height": 2200,
     "alt": "Illuminated Singapore film posters glowing red, gold, and blue against a dark wall.",
     "orientation": "portrait"
-  },
-  {
-    "id": "below-the-walkway",
-    "title": "Below the walkway",
-    "category": "Street",
-    "location": "",
-    "year": "",
-    "src": "images/photography/dscf0205.webp",
-    "thumbnail": "images/photography/dscf0205-900.webp",
-    "width": 2200,
-    "height": 1467,
-    "alt": "An elevated view of small figures walking along an amber-lit path beneath a dark overhead structure.",
-    "orientation": "landscape"
   },
   {
     "id": "from-above",
@@ -235,6 +248,19 @@ export const photos = [
     "orientation": "portrait"
   },
   {
+    "id": "petals-in-the-dark",
+    "title": "Petals in the dark",
+    "category": "Details",
+    "location": "",
+    "year": "",
+    "src": "images/photography/dscf0131.webp",
+    "thumbnail": "images/photography/dscf0131-900.webp",
+    "width": 1467,
+    "height": 2200,
+    "alt": "Softly focused flowers and leaves in deep red and amber light.",
+    "orientation": "portrait"
+  },
+  {
     "id": "pages-of-home",
     "title": "Pages of home",
     "category": "Details",
@@ -258,6 +284,19 @@ export const photos = [
     "width": 1467,
     "height": 2200,
     "alt": "A blurred foreground reflection partially obscuring a warm-lit shop display and FairPrice sign.",
+    "orientation": "portrait"
+  },
+  {
+    "id": "rain-on-the-window",
+    "title": "Rain on the window",
+    "category": "Street",
+    "location": "",
+    "year": "",
+    "src": "images/photography/dscf0111.webp",
+    "thumbnail": "images/photography/dscf0111-900.webp",
+    "width": 1467,
+    "height": 2200,
+    "alt": "Rain droplets on a window with hazy high-rise buildings beyond, tinted muted green.",
     "orientation": "portrait"
   },
   {
@@ -287,6 +326,19 @@ export const photos = [
     "orientation": "portrait"
   },
   {
+    "id": "under-a-muted-sky",
+    "title": "Under a muted sky",
+    "category": "Street",
+    "location": "",
+    "year": "",
+    "src": "images/photography/dscf0097.webp",
+    "thumbnail": "images/photography/dscf0097-900.webp",
+    "width": 1467,
+    "height": 2200,
+    "alt": "Dark tree canopies and passing cars beneath a muted green sky and a small orange sun.",
+    "orientation": "portrait"
+  },
+  {
     "id": "a-glimpse",
     "title": "A glimpse",
     "category": "Portraits",
@@ -297,6 +349,19 @@ export const photos = [
     "width": 1467,
     "height": 2200,
     "alt": "A woman holding a phone, seen through a narrow gap with a glowing shop sign above.",
+    "orientation": "portrait"
+  },
+  {
+    "id": "passing-through",
+    "title": "Passing through",
+    "category": "Street",
+    "location": "",
+    "year": "",
+    "src": "images/photography/dscf0221.webp",
+    "thumbnail": "images/photography/dscf0221-900.webp",
+    "width": 1467,
+    "height": 2200,
+    "alt": "A green bus and a silver car in motion beneath warm lights at night.",
     "orientation": "portrait"
   },
   {
