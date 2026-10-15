@@ -24,3 +24,11 @@ dialog{border:0;padding:0;max-height:90dvh;background:var(--paper);color:var(--i
 .photo-open .has-image{background:#1c211b}
 .photo-preview-grid .has-image{box-shadow:0 4px 12px #25282015}
 @media(max-width:540px){.photo-series{align-items:start;gap:15px;padding-bottom:22px}.photo-series .eyebrow{font-size:7px}.photo-series p{font-size:8px;max-width:110px;text-align:right;line-height:1.6}.gallery-item .photo-frame.has-image{aspect-ratio:var(--photo-ratio)}}
+
+/* Let wide scenes breathe, and centre a single closing frame. */
+.portrait-frame img{height:auto;object-position:50% 45%}
+.gallery-wide{grid-column:1/-1;padding-top:12px}
+.gallery-wide .photo-caption{font-size:12px}
+.gallery-wide .photo-frame{width:100%}
+.gallery-final-desktop{grid-column:2;padding-top:15px}
+@media(max-width:540px){.gallery-final-desktop{grid-column:auto;padding-top:var(--mobile-stagger,0px)}.gallery-final-mobile{grid-column:1/-1;width:68%;max-width:300px;justify-self:center;padding-top:12px}.gallery-wide{grid-column:1/-1;padding-top:10px}}
