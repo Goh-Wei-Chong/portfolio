@@ -64,6 +64,7 @@ The shared JavaScript manages the following browser interactions:
 - Gallery category filtering using the categories in `photos`.
 - A gallery lightbox with caption and navigation controls; empty slots open an explanatory frame view.
 - A shared light/dark theme toggle with a saved browser preference.
+- An illustrated shared contact footer with a back-to-top action and Shisa messages for hover, focus, and tap interaction.
 
 Keyboard access, visible focus states, and the ability to close overlays are part of the interaction design. When changing an overlay, verify focus behavior and keyboard controls as well as pointer interaction. When changing gallery filtering, confirm that the visible photo order and lightbox navigation remain consistent.
 
@@ -77,7 +78,13 @@ The home page and photography page share navigation, typography, and contact sty
 
 `public/theme-init.js` reads a saved `light` or `dark` value from local storage under `gwc-theme`, falling back to the system color preference. It sets the root `data-theme`, `color-scheme`, and browser `theme-color` before the main module renders. `src/theme.js` renders and manages the header control, follows system changes until a manual choice is made, and persists choices across both pages. Storage changes also synchronize open tabs. Theme behavior runs entirely in the browser; unavailable storage does not prevent the current page's toggle from working.
 
-The home page portrait is grouped inside `.hero-portrait`. Its decorative spiral arrow is an inline SVG from `portraitArrow()` in `src/main.js`, with responsive placement controlled by `.portrait-arrow` rules in `src/styles.css`. The stroke follows the shared accent color, and `aria-hidden` keeps it out of the accessibility tree.
+`src/footer.js` exports `footerMarkup()` for the shared contact scene and `initFooter()` for the interactive Shisa mascot. Its exported `shisaMessages` array contains fictional mascot copy. Hover, focus, and button activation cycle through messages, with a brief guard against duplicate events from one gesture. The visual bubble is `aria-hidden`; a separate visually hidden `[data-shisa-announcement]` polite live region announces the messages.
+
+The bubble stays visible while the pointer is within the mascot/bubble greeting area or the button has keyboard focus. Pointer exit dismisses it after 200 milliseconds when keyboard focus is absent; blur dismisses it when the pointer is outside. A document-level Escape handler also closes it. The six-second dismissal timer applies to activations without persistent hover or keyboard focus, such as a tap. The footer retains the profile's contact links and email-copy control, alongside a back-to-top link to the shared header's `#top` anchor.
+
+`src/footer.css` owns the `--footer-*` palette variables, illustration placement, and responsive layout. It uses deep blue in light mode and inky blue in dark mode; the external SVG supplies the cream line art.
+
+The footer's scene and mascot assets are `public/images/footer/last-stop.svg` and `public/images/footer/shisa.webp`. Decorative artwork stays outside the accessibility tree, while the mascot remains accessible to keyboard and touch interaction. The shared footer styling loads after the general theme styles so its scene colors can adapt to either mode. [Artwork provenance and the generation prompt](ASSETS.md) are documented separately.
 
 ## Validation
 
