@@ -9,7 +9,7 @@ This project is a static, two-page portfolio built with Vite and browser-native 
 | `index.html` | `/` | Profile, projects, experience, education, skills, contact |
 | `photography/index.html` | `/photography/` | Photograph gallery, filtering, and image viewing |
 
-Both entries load `src/main.js` and share `src/styles.css`. Their HTML provides page metadata and the mounting structure. The renderer selects the appropriate page and fills it using the exports in `src/content.js`.
+Both entries load `src/main.js` and share the layout and theme styles. Their HTML provides page metadata and the mounting structure, and loads `public/theme-init.js` early to apply the initial theme. The renderer selects the appropriate page and fills it using the exports in `src/content.js`.
 
 These are real HTML entry points rather than client-side routing. A visitor can open the photography URL directly, and static hosting can serve it without a fallback routing rule.
 
@@ -63,6 +63,7 @@ The shared JavaScript manages the following browser interactions:
 - Project cards and their detail view.
 - Gallery category filtering using the categories in `photos`.
 - A gallery lightbox with caption and navigation controls; empty slots open an explanatory frame view.
+- A shared light/dark theme toggle with a saved browser preference.
 
 Keyboard access, visible focus states, and the ability to close overlays are part of the interaction design. When changing an overlay, verify focus behavior and keyboard controls as well as pointer interaction. When changing gallery filtering, confirm that the visible photo order and lightbox navigation remain consistent.
 
@@ -70,9 +71,13 @@ Images without a real source remain placeholders. They should not be treated as 
 
 ## Styling
 
-`src/styles.css` contains shared design values, page layouts, components, responsive rules, and interaction states. The design uses prominent headings, generous spacing, rounded panels, and photographic framing to give resume content an editorial presentation.
+`src/styles.css` contains the base light palette, shared design values, page layouts, components, responsive rules, and interaction states. `src/theme.css` supplies the dark palette, theme-specific component styling, and toggle styles. The design uses prominent headings, generous spacing, fine borders, and photographic framing to give resume content an editorial presentation.
 
 The home page and photography page share navigation, typography, and contact styling. Component classes provide local variations, while responsive rules adapt grids and spacing to narrower screens. Keep reduced-motion behavior and visible focus treatment intact when adjusting animation or transitions.
+
+`public/theme-init.js` reads a saved `light` or `dark` value from local storage under `gwc-theme`, falling back to the system color preference. It sets the root `data-theme`, `color-scheme`, and browser `theme-color` before the main module renders. `src/theme.js` renders and manages the header control, follows system changes until a manual choice is made, and persists choices across both pages. Storage changes also synchronize open tabs. Theme behavior runs entirely in the browser; unavailable storage does not prevent the current page's toggle from working.
+
+The home page portrait is grouped inside `.hero-portrait`. Its decorative spiral arrow is an inline SVG from `portraitArrow()` in `src/main.js`, with responsive placement controlled by `.portrait-arrow` rules in `src/styles.css`. The stroke follows the shared accent color, and `aria-hidden` keeps it out of the accessibility tree.
 
 ## Validation
 
