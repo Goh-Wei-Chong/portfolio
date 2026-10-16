@@ -41,7 +41,7 @@ export const projects = [
       'Play Who’s That Pokémon and Pokémon Blitz, with generation filters through Generation IX.',
       'Uses a local PokéAPI-derived catalog for search, filtering, comparisons, and game answers, without a live API dependency.',
     ],
-    image: 'images/projects/rotomdex.webp', imageAlt: 'Rotom Dex homepage with a Rotom mascot, Pokémon search and filters, and Paldea Pokémon cards', sourceUrl: 'https://github.com/Goh-Wei-Chong/Goh-Wei-Chong.github.io-Pokemon-Website', liveUrl: 'https://goh-wei-chong.github.io/Goh-Wei-Chong.github.io-Pokemon-Website/',
+    image: 'images/projects/rotomdex.webp', imageAlt: 'Rotom Dex homepage with a Rotom mascot, Pokémon search and filters, and Paldea Pokémon cards', sourceUrl: 'https://github.com/Goh-Wei-Chong/RotomDex', liveUrl: 'https://goh-wei-chong.github.io/RotomDex/',
   },
 ];
 
